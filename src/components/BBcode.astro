@@ -1,0 +1,67 @@
+---
+export interface Props {
+	title: string;
+	body: string;
+	href: string;
+}
+
+const { href, title, body } = Astro.props;
+---
+<bbcodewrapper>
+    <div id="BBcode"> <slot /></div>
+
+    <style>
+        #GitTest {
+            border-radius: 25px;
+            border: 1px solid white;
+            margin-bottom: .5em;
+            height:auto;
+            max-width:100%;
+            color:red;
+        }
+
+        /* #GitTest p { border: 1px solid white;} */
+                    
+        .img {
+            border-radius: 15px;
+            border: 10px solid red;
+            height:auto;
+            width:100%;
+    }
+    </style>
+
+    </script>
+
+
+<script>
+    import bbobHTML from '@bbob/html'
+    import presetHTML5 from '@bbob/preset-html5'
+    const url = "https://raw.githubusercontent.com/McMeddon/mcmbbcodetest/main/vekanpid.txt?token=GHSAT0AAAAAACCOWUPV2TOUFLQH4TU7BMQSZC3V5MQ";
+    const options = {
+        headers: {
+            'Authorization': ''
+        }
+    };
+
+
+    fetch(url)
+    .then(response => response.text())
+    .then(data => {
+        var processed = bbobHTML(data, presetHTML5());
+        document.getElementById("BBcode").innerHTML = processed;
+
+
+    //img scaling fix
+   const BBcodeimgs = BBcode.querySelectorAll('img');
+      BBcodeimgs.forEach(img => {
+          img.classList.add('img');
+          img.style.width = '100%';
+        });
+  });
+
+    //test
+    const test = bbobHTML(`[h1][i]OMEGA Text[/i][/h1]`, presetHTML5())
+    console.log(test); // <span style="font-style: italic;">Text</span>
+
+    </script>
+</bbcodewrapper>

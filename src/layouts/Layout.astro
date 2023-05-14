@@ -1,0 +1,110 @@
+---
+import Sidebar from '../components/Sidebar.astro';
+import BBcode from '../components/BBcode.astro';
+import '../styles/globalstyles.css';
+import Pilcollection from '../components/Pillcollection.astro';
+import BGani from '../components/BG-animation.astro';
+import BGani2 from '../components/BG-animation2.astro';
+
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+---
+
+
+<!DOCTYPE html>
+<html lang="en">
+<!--
+	"We keep moving forward, opening up new doors and
+	doing new things, because we're curious ...
+	and curiosity keeps leading us down new paths."
+		
+		- Walt Disney
+-->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>	
+
+	<!-- <menuplaceholder></menuplaceholder> -->
+	<wrapper>
+		<sidebar ><Sidebar /></sidebar>
+		<content>
+			<background>
+				<BGani />
+				<BGani2 />
+			</background>
+			<Pilcollection />
+			<div >
+				<slot />
+			</div>
+		</content>		
+		<ads style="background-color: rgba(0,0,0,0.1); color:white;">
+		 <div>i am the right sidebar</div>
+
+		</ads>
+	</wrapper>
+	</body>
+</html>
+<style is:global>
+	:root {
+		/* original
+		 --accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%); */
+		--text-color: #efefef;
+		--accent-color: #ff5e00;
+		--accent: 235, 193, 77;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #ff5e00 30%, white 60%);
+		--sidebar-max-width: minmax(8rem,0);
+	}
+	html,body {
+		/* //import the font Inter Designed by Rasmus Andersson from googlefonts */
+		@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+		font-family: 'Inter', sans-serif;
+		margin: 0px;
+		padding: 0px;
+		height: 100vh;
+		
+	}
+	html {
+		background-color:#111;
+	}
+	
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+	/* wrapper */
+	content{
+		margin:1em;
+		width:80%;
+	}
+
+	wrapper{
+		display:grid;
+		grid-template-columns: var(--sidebar-max-width) auto ;
+		/*width right-sidebar*/
+		/* grid-template-columns: var(--sidebar-max-width) auto 20em; */
+		/* gap:1em; */
+		
+
+	}
+	@media (max-width: 600px) {		
+			wrapper{
+			display:grid;
+			grid-template-columns: var(--sidebar-max-width) auto;
+		}
+	}
+	
+	main {
+        color: var(--text-color);   
+    }
+	
+</style>

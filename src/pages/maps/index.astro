@@ -1,0 +1,73 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Card from '../../components/Card.astro';
+/* import Herobanner from '../../components/herobanner.astro';
+import BBcode from '../components/bbcode.astro';
+import Instruction from '../components/Instruction.astro'; */
+
+const pages = import.meta.glob('/src/pages/maps/**/*.{astro,md}');
+let links = [];
+for (const path in pages) {
+  const url = path.replace(/^\/src\/pages\/maps\//, '').replace(/\.(astro|md)$/, '');
+  links.push({url});
+}
+---
+
+
+
+<Layout title="Maps Index">
+	<mapsindexlayout>		
+		<section class="container about" aria-label="About the Worlds"> 
+			<h1> Maps Overview</h1>
+			<h2 class="title">About the Worlds</h2>
+			<p class="text">These are diverse Minecraft Landscape for survival, creative, coop, and server adventures made by McMeddon.
+				<br><br>Adventure, explore, survive or create, at the most beautiful places in Minecraft and explore all the unique places and structures around the world.
+				<br><br>Loot ships, balloons, and conquer dungeons. Build a house on Volcanos, or within huge mountains or survive along the rivers and the woods. Find custom caves, mineshafts, coral reefs, advanced biomes, supporter villages, and more.
+				 </p>	
+		</section>
+		<maps> <!-- //display all maps in a list of the folder /maps/  -->
+			<ul>
+				{links.map(link => (
+					<li><a class="maplinks" href={link.url}>{link.url}</a></li>
+				  ))}
+			</ul>
+		</maps>
+	</mapsindexlayout>
+</Layout>
+<style>
+	mapsindexlayout {
+		display:grid;
+		grid-template-columns: 1fr 1fr;
+		}
+		
+		.container {
+			color: var(--text-color);
+		}
+
+		ul li {
+			color: var(--text-color);
+			text-decoration: none;
+			list-style-type: none;
+			padding: .5em;
+			margin-bottom: 1em;
+			
+		}
+
+		ul li a {
+			color: var(--text-color);
+			text-decoration: none;
+			font-size: 2.5rem;
+			background-color: #222;
+			padding: 15px;
+			border-radius: 50px;
+			
+		}
+		.maplinks {
+			
+
+		}
+		.maplinks:hover{
+			color: var(--accent-color);
+			text-decoration: underline;
+		}
+</style>

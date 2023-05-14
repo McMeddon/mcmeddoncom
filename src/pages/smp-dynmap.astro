@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Card from '../components/Card.astro';
+import Herobanner from '../components/herobanner.astro';
+import BBcode from '../components/bbcode.astro';
+import Instruction from '../components/Instruction.astro';
+
+export interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+
+
+<Layout title="Index">
+	
+	<main>		
+        <iframe class="dynmap"
+        src="http://play.mcmeddon.com:8123/?worldname=Gelazkor&mapname=surface&zoom=1&x=2381&y=64&z=2500"
+        style="
+        
+        "
+        >
+    </iframe>
+    <h1 style="padding-left: 1em;"><span class="text-gradient"  style="z-index: 10;">MCS SMP Dynmap</span></h1>
+    </main> 
+</Layout>
+
+<style>
+
+#h1{
+    position: absolute;
+    top: 15em;
+    left: 1.25em;
+    z-index: 99999;
+    transform: rotate(90deg);
+    transform-origin: bottom left;
+    
+}
+
+.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+</style>
+
+
+

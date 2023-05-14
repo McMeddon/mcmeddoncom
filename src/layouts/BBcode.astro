@@ -1,0 +1,68 @@
+---
+
+import Layout from './Maps.astro';
+import BBcode from '../components/BBcode.astro';
+    const {frontmatter} = Astro.props;
+    /* const {title, description, date, image, tags} = frontmatter; */
+    const {html} = Astro;
+    console.log(frontmatter); 
+
+    const {title, img, src, p, body } = Astro.props;
+---
+<Layout title={title}>
+    <astro>
+        <bbcode id="BBcode"> 
+           <!-- Test
+            Varifying [h1] Title [/h1] 
+            Varifying [strong] strong [/strong] 
+            [img] https://i.imgur.com/T4bo8LD.png [/img] -->
+            <slot />
+        </bbcode>
+
+        <style>
+            .img {
+                border:1px solid red;
+            }
+          
+            .img {
+                border-radius: 15px;
+                border: 10px solid red;
+                height:auto;
+                width:100%;
+
+        }
+        </style>
+
+    <script>
+        import bbobHTML from '@bbob/html'
+        import presetHTML5 from '@bbob/preset-html5'
+
+            const element = document.querySelector('bbcode');
+            const BBcode = element.innerHTML;
+            const html = bbobHTML(BBcode, presetHTML5());
+            element.innerHTML = html;
+            
+            //img scaling fix
+            const BBcodeimgs = element.querySelectorAll('img');
+            BBcodeimgs.forEach(img => {
+            img.classList.add('img');
+            img.style.width = '100%';
+            
+            img.style.marginBottom = '5px';
+
+            });
+            //select the first 3 images
+            const imgs = element.querySelectorAll('img');
+            const first3 = [...imgs].slice(0, 3);
+            first3.forEach(img => {
+                
+                img.style.width = '25vw';
+                
+            });
+
+    
+        </script>
+    </astro>
+
+</Layout>
+

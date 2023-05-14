@@ -1,0 +1,40 @@
+---
+export interface Props {
+	p: string;
+	h2: string;
+    p2: string;
+}
+
+const { h2, p, p2 } = Astro.props;
+---
+
+<p class="instructions">
+    <strong>{h2}</strong> <br>
+     {p} <br>
+     {p2} <br>
+     More details on<code>/FAQ</code> 
+</p>
+
+<style>
+
+.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+        background: rgba(var(--accent), 5%);
+		padding: 1rem;
+		border-radius: 0.4rem;
+        color:var(--accent) ;
+	}
+	.instructions code {
+		font-size: 0.875em;
+		font-weight: bold;
+		background: rgba(var(--accent), 12%);
+		color: rgb(var(--accent));
+		border-radius: 4px;
+		padding: 0.3em 0.45em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent));
+	}
+</style>

@@ -1,0 +1,22 @@
+---
+import Layout from './Layout.astro';
+import '../styles/globalstyles.css';
+
+//const {frontmatter} = Astro.props;
+const {title, description, date, img, tags} = Astro.props;
+
+
+//console.log(frontmatter);
+
+---
+<Layout>
+    <main class="MapsLayout">
+        <bbcode id="BBcode">
+            <slot />
+        </bbcode>
+    </main>
+</Layout>
+
+<style>
+
+</style>

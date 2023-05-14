@@ -1,0 +1,72 @@
+---
+import Pill from '../components/Pill.astro';
+import McPingPill from '../components/McPingPill.astro';
+const {playerCount } = Astro.props;
+---
+<div class="Pillcollection">
+
+    <Pill 
+    link="https://www.patreon.com/mcmeddon"
+    title="Patreon"
+    icon="https://c5.patreon.com/external/favicon/apple-touch-icon.png?v=af5597c2ef"
+    target="_blank"
+    />
+    
+    <Pill 
+    link="https://www.planetminecraft.com/member/mcmeddon/"
+    title="PMC"
+    icon="https://www.planetminecraft.com//images/layout/favicon-24.png"
+    target="_blank"
+    />
+    
+    <Pill 
+    link="http://youtube.mcmeddon.com"
+    title="Youtube"
+    icon="https://www.youtube.com/s/desktop/cbc86408/img/favicon.ico"
+    target="_blank"
+    />
+    
+    <Pill 
+    link="http://discord.mcmeddon.com"
+    title="Discord"
+    icon="../../discord.ico"
+    target="_blank"
+    />
+    <Pill 
+    link="http://pinterest.mcmeddon.com"
+    title="Pinterest"
+    icon="../../../public/pinterest.png"
+    target="_blank"
+    />
+    <Pill 
+    link="/smp/"
+    title="MCS&nbsp;SMP"
+    icon="../../logo.png"
+    />
+    <!-- <div><input type="search" placeholder="Search..."></div> -->    
+    <McPingPill />
+    <div></div>
+</div>
+
+<style>
+
+.Pillcollection{ 
+    width:100%;  
+    align-items: center;
+    width: fit-content;
+    margin: 1em; 
+}
+
+input[type="search"] {
+    width: 100%;
+    margin-top: 1em;    
+    padding: 18px 20px;
+    box-sizing: border-box;
+    border: 2px solid #222;
+    border-radius: 100px;
+    background-color: #333;
+  }
+
+
+</style>
+</style>

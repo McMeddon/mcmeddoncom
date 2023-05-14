@@ -1,0 +1,24 @@
+---
+
+const {playerCount } = Astro.props;
+---
+
+<div><span id="status"></span> SMP </div>
+<div> Online <span id="player-count" class=""></span></div>
+
+<script>
+let playerCount;
+
+fetch('https://api.mcsrvstat.us/2/play.mcmeddon.com')
+  .then(response => response.json())
+  .then(data => {
+    const { online, players } = data;
+    playerCount = players.online;
+    const status = online ? '🟢' : '🔴';
+
+    document.getElementById('status').textContent = status;
+    document.getElementById('player-count').textContent = playerCount;
+  })
+  .catch(error => console.error(error));
+</script>
+

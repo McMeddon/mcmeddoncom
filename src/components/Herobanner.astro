@@ -1,0 +1,97 @@
+---
+export interface Props {
+	img: string;
+	h1: string;
+    p: string;
+}
+
+const { title, img, h1, src, p } = Astro.props;
+---
+
+<div class="wrapper">
+    <a href="">
+        <img class="heroimage" src={img}>
+        
+        <div class="herobanner">
+            <h2 class="text-gradient heroimagetitle">{h1}</h2>
+            <!-- <p>{p}</p> -->
+        </div>
+    </a>
+
+    
+<style>
+.heroimage {
+    width: 100%;
+}
+
+.wrapper{
+        position: relative;
+        display:grid;
+        grid-template-rows: 1fr auto;
+        margin-bottom:2em ;
+        
+    }
+    .herobanner {
+        
+    }
+    .heroimagetitle {
+        background-color: black;
+
+        text-align: center;
+        font-weight: 800;
+        z-index: 10;
+        position: relative;
+        padding: 10px;
+        margin:0px;
+        line-height: 1em;
+    }
+
+
+    p{ 
+        text-align: center;
+        color:white;
+        font-size: 1em;
+        font-style:italic;
+        font-weight: bold;
+        padding:1em;
+        margin-top:-1em;
+        z-index: 1;
+        }
+    .heroimage {
+        
+        object-fit:cover;
+        position: sticky;
+        border-radius: 25px;
+        z-index: 1;
+        filter: brightness(100%);
+        aspect-ratio: 4/2;
+        max-height: 35em;
+        
+    }
+    
+	.heroimage {		
+		list-style: none;
+		padding: 0.25rem;
+		background-color: #222;
+		background-image: none;
+		background-size: 400%;
+		border-radius: 25px;
+		background-position: 100%;
+		transition: background-position 1s cubic-bezier(0.22, 1, 0.36, 1);;
+		
+	}
+	
+	.heroimage:is(:hover, :focus-within) {
+        border-radius: 25px;
+        background-position: 0;
+		background-image: var(--accent-gradient);
+		
+	}
+    .text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;}
+</style>
+

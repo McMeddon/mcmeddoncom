@@ -1,0 +1,74 @@
+---
+
+const {playerCount } = Astro.props;
+---
+
+
+
+<div class="pillcontainer">
+  <div class="pill"> 
+    <span id="status" class=""></span> play.mcmeddon.com |
+     Online: <span id="player-count" class=""></span>
+      </a>
+  </div>
+</div>
+
+<script>
+let playerCount;
+
+fetch('https://api.mcsrvstat.us/2/play.mcmeddon.com')
+  .then(response => response.json())
+  .then(data => {
+    const { online, players } = data;
+    playerCount = players.online;
+    const status = online ? '🟢' : '🔴';
+
+    document.getElementById('status').textContent = status;
+    document.getElementById('player-count').textContent = playerCount;
+  })
+  .catch(error => console.error(error));
+</script>
+
+
+<style>
+    .pillcontainer{
+        display:inline-block;
+		
+		}
+  
+	.pill {		
+		
+    	color: #999;
+		list-style: none;
+		padding: 1.2rem;
+		background-image: none;
+		border:.25em solid #222;
+		background-size: 400%;
+		border-radius: 100px;
+		background-position: 100%;
+		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+	
+	.pill > a {
+		background-color: #111;
+		max-height:fit-content;
+		text-decoration: none;
+		padding: 1rem 1.3rem;
+		border-radius: 100px;
+		color: #999;
+		background-color: #111;
+		opacity: 0.8;
+	}
+	h2 {
+		margin: 0;
+        padding-left:0.5em;
+		font-size: 1rem;
+		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+	p {
+		margin-top: 0.5rem;
+		margin-bottom: 0;
+		color: #ededed;
+	}
+
+</style>
