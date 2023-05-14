@@ -1,0 +1,1 @@
+let e;fetch("https://api.mcsrvstat.us/2/play.mcmeddon.com").then(t=>t.json()).then(t=>{const{online:n,players:o}=t;e=o.online;const s=n?"🟢":"🔴";document.getElementById("status").textContent=s,document.getElementById("player-count").textContent=e}).catch(t=>console.error(t));
