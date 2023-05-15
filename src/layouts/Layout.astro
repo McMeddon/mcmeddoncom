@@ -50,10 +50,9 @@ const { title } = Astro.props;
 				<slot />
 			</div>
 		</content>		
-		<ads style="background-color: rgba(0,0,0,0.1); color:white;">
+<!-- 		<rightsidebar style="background-color: rgba(0,0,0,0.1); color:white;">
 		 <div>i am the right sidebar</div>
-
-		</ads>
+		</rightsidebar> -->
 	</wrapper>
 	</body>
 </html>
@@ -93,7 +92,7 @@ const { title } = Astro.props;
 
 	wrapper{
 		display:grid;
-		grid-template-columns: var(--sidebar-max-width) auto ;
+		grid-template-columns: var(--sidebar-max-width) auto;
 		/*width right-sidebar*/
 		/* grid-template-columns: var(--sidebar-max-width) auto 20em; */
 		/* gap:1em; */
