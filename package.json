@@ -10,8 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/image": "^0.16.8",
     "@bbob/html": "^2.9.0",
     "@bbob/preset-html5": "^2.9.0",
-    "astro": "^2.4.1"
+    "astro": "^2.4.5",
+    "sharp": "^0.32.1"
   }
 }
