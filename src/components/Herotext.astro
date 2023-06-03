@@ -1,0 +1,37 @@
+---
+export interface Props {
+	h1: string;
+	p: string;
+    p2: string;
+}
+
+const { h1, p, p2} = Astro.props;
+---
+
+<div class="indexherotitle">
+    <h1><span class="text-gradient">{h1}</span></h1>
+    <p>{p}<br>{p2}</p>
+</div>
+
+
+<style>
+
+.indexherotitle {
+	padding:8em;
+	text-align: center;
+	margin:auto;
+}
+
+.indexherotitle h1 {
+	width: 70%;
+	margin: auto;
+}
+.indexherotitle p {
+	padding: 1em;
+	font-size: x-large;
+	font-weight: 100;
+	width: 50%;
+	margin: auto;
+}
+
+</style>

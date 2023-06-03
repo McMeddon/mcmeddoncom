@@ -1,5 +1,8 @@
 ---
+import Instruction from '../components/Instruction.astro';
 import Layout from '../layouts/Layout.astro'
+import Card from '../components/Herotext.astro';
+import Herotext from '../components/Herotext.astro';
 
 export interface Props {
     title: string;
@@ -10,19 +13,36 @@ const { title } = Astro.props;
 
 
 
+
+
 <Layout title="Worlds Dynmap">
 	<main>		
-		<h1>Worlds Dynmap</h1>
-	
+
+		<Herotext
+			h1="Worlds Dynmap"
+			p="Enjoy exploring dozens of Custom Worlds in a 3D Overview"
+			p2="Hint: You can select new worlds in the right sidepanel">
+		</Herotext>
         <iframe class="dynmap"
-         src="https://mcmeddonworlds.my.pebble.host/?worldname=Jesankor&mapname=surface&zoom=0&x=4662&y=64&z=3745"
-         >
-        </iframe>
+		src="https://mcmeddonworlds.my.pebble.host/?worldname=Jesankor&mapname=surface&zoom=0&x=4662&y=64&z=3745"
+		>
+	</iframe>
+	<div class="instruction">
+		<Instruction
+			h2="McMeddons Worlds Dynmap"
+			p="Apologies for the incorrectly rendered Dynmap (Leaves misdisplayed). "
+			note="Note"
+			p2="It was a Dynmap Bug that continues to exist - requires a full rerender of all maps to be fixed and will be done soon">
+		</Instruction>
+
+		
+		</div>
     </main> 
 </Layout>
-
 <style>
-
+.instruction {
+	width: fit-content;
+}
 
 </style>
 

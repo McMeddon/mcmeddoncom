@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Herobanner from '../components/Herobanner.astro';
 import Card from '../components/Card.astro';
+import Card from '../components/Herotext.astro';
+import Herotext from '../components/Herotext.astro';
 /* import BBcode from '../components/bbcode.astro';
 import Instruction from '../components/Instruction.astro';
 import McPing from '../components/McPing.astro';
@@ -19,12 +21,11 @@ const { title } = Astro.props;
 <Layout title="Index">	
 	<main>		
 		<!----------------------------------->
-		<div class="indexherotitle">
-			<h1><span class="text-gradient">Advanced Survival Friendly Vanilla Minecraft Landscapes</span></h1>
-			<p>Creating with passion survival worlds for solo, coop and multiplayer server adventures for you to explore and enjoy</p>
-		</div>
-
-		
+		<Herotext
+		h1="Advanced Survival Friendly Vanilla Minecraft Landscapes"
+		p="Creating with passion survival worlds for solo, coop and multiplayer server adventures for you to explore and enjoy">
+		</Herotext>
+				
 		 <Herobanner class="hover"
 		 href="https://www.planetminecraft.com/project/wullestor/"
 		 h1="Wullestor - 4k, The Island of Archipels "
@@ -95,25 +96,6 @@ const { title } = Astro.props;
 		margin-bottom: 1em;
 	}
 }
-
-.indexherotitle {
-	padding:8em;
-	text-align: center;
-	margin:auto;
-}
-
-.indexherotitle h1 {
-	width: 70%;
-	margin: auto;
-}
-.indexherotitle p {
-	padding: 1em;
-	font-size: x-large;
-	font-weight: 100;
-	width: 50%;
-	margin: auto;
-}
-
 
 /* ---------------------------------------------- */
 </style>
