@@ -37,6 +37,7 @@ const { title } = Astro.props;
 	<wrapper>
 		<sidebar ><Sidebar /></sidebar>
 		<content>
+			<Pilcollection/>
 			<background>
 				<BGani />
 				<BGani2 />
@@ -45,11 +46,10 @@ const { title } = Astro.props;
 				<slot />
 			</div>
 			<div></div>
-			<Pilcollection/>
 		</content>		
-		<rightsidebar style="background-color: rgba(0,0,0,0.1); color:white;">
+		<!-- <rightsidebar style="background-color: rgba(0,0,0,0.1); color:white;">
 		 <div>i am the right sidebar</div>
-		</rightsidebar>
+		</rightsidebar> -->
 	</wrapper>
 	</body>
 </html>
