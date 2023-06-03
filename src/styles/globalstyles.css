@@ -1,4 +1,16 @@
+@import url(./buttons.css);
 
+:root {
+	/* original
+	 --accent: 124, 58, 237;
+	--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%); */
+	--text-color: #efefef;
+	--accent: 235, 193, 77;
+	--accent2: #ff5e00;
+	--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), var(--accent2) 30%, white 60%);
+	--sidebar-max-width: minmax(7rem,0);
+	--sidebar-max-width-mobile: minmax(2rem,0);
+}
 
 main {		
 		padding: 1.5rem;
@@ -28,40 +40,39 @@ hr {
 	background-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgb(255, 255, 255) 50%, rgba(0,0,0,0) 100%);
 	}
 /*--------------------------------------------*/
+/* Desktop Fontsizes */
+
+
+	h1 {font-size: calc(12px + 2.5vw);}
+	h2 {font-size: calc(12px + 2vw);}
+	h3 {font-size: calc(12px + 1vw);}
+	h4 {font-size: calc(12px + .7vw);}
+	h5 {font-size: calc(12px + .5vw);}
+	h6 {font-size: calc(12px + .4vw);}
+p{
+	font-size: calc(12px + .6vw);
+	line-height: calc(1em + 0.4vw);
+}
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+/* Desktop weights */
+
+	h1 {font-weight: 900;}
+	h2 {font-weight: 200;}
+	h3 {font-weight: 300;}
+	h4 {font-weight: 400;}
+	h5 {font-weight: 600}
+	h6 {font-weight: 700;}
+
+
+
 h1 {
-	color:#efefef;
-	font-size: 4rem;
-	font-weight: 900;
 	line-height: 1em;
 	margin: 0;
 }
-    
-@media (max-width: 1000px) {
-	h1 {
-		font-size: 3.5em;
-	}
-}
-@media (max-width: 700px) {
-	h1 {
-		font-size: 2em;
-	}
-}
 
-h2 {
-	font-size: 3rem;
-	font-weight: 700;
-	
-}
-    
-@media (max-width: 1000px) {
-	H2 {
-		font-size: 2.5em;
-	}
-}
-@media (max-width: 700px) {
-	H2 {
-		font-size: 1.5em;
-	}
+img {
+	max-width: 100%;
 }
 /*--------------------------------------------*/
 .contentwrapper{
@@ -70,7 +81,7 @@ h2 {
 	grid-column-gap: 2%;
 }
 
-	.text-gradient, h1 {
+	.text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;

@@ -3,15 +3,16 @@ export interface Props {
 	h1: string;
 	p: string;
     p2: string;
+	body: string;
 }
 
-const { h1, p, p2} = Astro.props;
+const { h1, p, p2, body} = Astro.props;
 ---
 
 <div class="herotitlewrapper">
     <h1><span class="text-gradient">{h1}</span></h1>
     <hr>
-    <p>{p}<br>{p2}</p>
+    <p>{p}<br>{p2} {body}</p>
 </div>
 
 

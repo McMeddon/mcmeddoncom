@@ -3,9 +3,10 @@ export interface Props {
 	img: string;
 	h2: string;
     p: string;
+    href: string;
 }
 
-const { title, img, h2, href, p } = Astro.props;
+const { img, h2, href, p } = Astro.props;
 import { Image, Picture } from "@astrojs/image/components";
 ---
 
@@ -55,8 +56,8 @@ a {
         bottom: 50px;
         color:white;
         text-align: center;
-        font-size: 2.4em;
-        font-weight: 100;
+        /* font-size: 2.4em; */
+        /* font-weight: 100; */
         font-style: italic;
         z-index: 9999;
         position: relative;
@@ -64,18 +65,9 @@ a {
         line-height: 1em;
     }
 
-    @media (max-width: 800px) {
-        .heroimagetitle {
-            font-size: 1.2em;
-            bottom: 20px;
-        }
-    }
-
-
-    p{ 
+    p { 
         text-align: center;
         color:white;
-        font-size: 1em;
         font-style:italic;
         font-weight: bold;
         padding:1em;

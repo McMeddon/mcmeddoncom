@@ -1,0 +1,156 @@
+---
+import Herotext from '../components/Herotext.astro';
+import Layout from '../layouts/Layout.astro';
+import Herotext from '../components/Herotext.astro';
+---
+<Layout>
+
+        <Herotext
+        h1="UI Components overview"
+        p="all visbile compontents to display"
+        />
+            
+
+<h1> Overview Buttons</h1>
+<div class="d-flex gap-2 justify-content-center py-5">
+    <button class="btn btn-primary pilled" type="button">Primary</button>
+    <button class="btn btn-secondary pilled px-3" type="button">Secondary</button>
+    <button class="btn btn-success pilled px-3" type="button">Success</button>
+    <button class="btn btn-danger pilled px-3" type="button">Danger</button>
+    <button class="btn btn-warning pilled px-3" type="button">Warning</button>
+    <br>
+    <br>
+    <button class="btn btn-info pilled px-3" type="button">Info</button>
+    <button class="btn btn-light pilled px-3" type="button">Light</button>
+    <button class="btn btn-dark pilled px-3" type="button">Dark</button>
+    <button class="btn btn-link pilled px-3" type="button">Link</button>
+    <button class="btn btn-primary circle" type="button">
+        <svg class="bi" width="16" height="16"><use xlink:href="#x-lg"></use></svg>
+        <span class="visually-hidden">Dismiss</span>
+      </button>
+      <hr>
+    <grid>
+      <button class="btn btn-primary " type="button">Primary action</button>    
+        <button class="btn btn-outline " type="button">Secondary action</button>
+    </grid>
+  </div>
+<hr>
+
+<h2>Overview Text</h2>
+    
+<h1>Page Heading with <i>Italics</i> and <u>Underline</u></h1>
+<p>Page Subheading with <mark>highlighting</mark></p>
+<br>
+
+<hr>
+
+    <main>
+        <hr>
+        <section>
+            <h1 class="text-gradient"> H1 Heading with gradient</h1>
+            <h1> H1 Heading</h1>
+            <h2> H2 Subheading</h2> 
+            <h3> H3 Subheading</h3>   
+            <h4> H4 Subheading</h4>
+            <h5> H5 Subheading</h5>
+            <h6> H6 Subheading</h6>
+            <header>
+                <h2>Section Heading</h2>
+                <p>Section Subheading</p>
+            </header>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam assumenda voluptatibus pariatur perspiciatis ipsam voluptate, fugiat dolor et. Corporis totam suscipit esse facilis quasi ratione ipsum necessitatibus aliquid accusamus repudiandae.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam assumenda voluptatibus pariatur perspiciatis ipsam voluptate, fugiat dolor et. Corporis totam suscipit esse facilis quasi ratione ipsum necessitatibus aliquid accusamus repudiandae.</p>
+        </section>
+        <hr>
+        <section>
+            <blockquote>
+                "Quote"
+                <footer><i>- Attribution</i></footer>
+            </blockquote>
+        </section>
+        <hr>
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Col A</th>
+                        <th>Col B</th>
+                        <th>Col C</th>
+                    </tr>
+                </thead>
+                <tbody><tr>
+                    <td>Row 1</td>
+                    <td>Cell A1</td>
+                    <td>Cell B1</td>
+                    <td>Cell C1</td>
+                </tr>
+                <tr>
+                    <td>Row 2</td>
+                    <td>Cell A2</td>
+                    <td>Cell B2</td>
+                    <td>Cell C2</td>
+                </tr>
+            </tbody></table>
+        </section>
+        <hr>
+        <article>
+            <h2>Left-aligned header</h2>
+            <p>Left-aligned paragraph</p>
+            <aside>
+                <p>Article callout</p>
+            </aside>
+            <ul>
+                <li>List item 1</li>
+                <li>List item 2</li>
+            </ul>
+            <figure>
+                <img alt="Stock photo" src="https://via.placeholder.com/1080x500?text=Amazing+stock+photo">
+                <figcaption><i>Image caption</i></figcaption>
+            </figure>
+        </article>
+        <hr>
+        <div>
+            <details open="">
+                <summary>Expandable title</summary>
+                <p>Revealed content</p>
+            </details>
+            <details open="">
+                <summary>Another expandable title</summary>
+                <p>More revealed content</p>
+            </details>
+            <br>
+            <p>Inline <code>code</code> snippets</p>
+            <pre style="position: relative;">                <code>
+                // preformatted code block
+            </code>
+            <div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+        </div>
+        <hr>
+        <section>
+            <form>
+                <header>
+                    <h2>Form title</h2>
+                </header>
+                <label for="input1">Input label:</label>
+                <input type="text" id="input1" name="input1" size="20" placeholder="Input1">
+                <label for="select1">Select label:</label>
+                <select id="select1">
+                    <option value="option1">option1</option>
+                    <option value="option2">option2</option>
+                </select>
+                <label for="textarea1">Textarea label:</label>
+                <textarea cols="40" rows="5" id="textarea1"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <hr>
+        <p>
+            <small>Contact info</small>
+        </p>
+    </footer>
+</wrapper>
+</Layout>
