@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Herobanner from '../components/Herobanner.astro';
-/* import Card from '../components/Card.astro'; */
+import Card from '../components/Card.astro';
 /* import BBcode from '../components/bbcode.astro';
 import Instruction from '../components/Instruction.astro';
 import McPing from '../components/McPing.astro';
@@ -18,11 +18,12 @@ const { title } = Astro.props;
 
 <Layout title="Index">	
 	<main>		
-		
 		<!----------------------------------->
-		<h1><span class="text-gradient">McMeddons Survival Friendly Worlds to Explore, Play, and Enjoy </span></h1>
-		
-		<p></p>
+		<div class="indexherotitle">
+			<h1><span class="text-gradient">Advanced Survival Friendly Vanilla Minecraft Landscapes</span></h1>
+			<p>Creating with passion survival worlds for solo, coop and multiplayer server adventures for you to explore and enjoy</p>
+		</div>
+
 		
 		 <Herobanner class="hover"
 		 href="https://www.planetminecraft.com/project/wullestor/"
@@ -84,15 +85,35 @@ const { title } = Astro.props;
 		gap: 1rem;
 		padding: 0;
 	}
+
+	
+/* ---------------------------------------------- */	
+
 @media (min-width: 600px) {
 	h1{
 		margin-top: 1em;
 		margin-bottom: 1em;
 	}
 }
-	
-/* ---------------------------------------------- */	
+
+.indexherotitle {
+	padding:8em;
+	text-align: center;
+	margin:auto;
+}
+
+.indexherotitle h1 {
+	width: 70%;
+	margin: auto;
+}
+.indexherotitle p {
+	padding: 1em;
+	font-size: x-large;
+	font-weight: 100;
+	width: 50%;
+	margin: auto;
+}
 
 
-
+/* ---------------------------------------------- */
 </style>

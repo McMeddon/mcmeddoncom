@@ -90,11 +90,11 @@ h2 {
 	} */
 
 	.dynmap, iframe {
-		position: absolute;
+		position: relative;
 		border-radius: 25px;
 		z-index: 1;
-		min-width:90%; 
-		min-height:80%; 
+		min-width:100%; 
+		min-height:720px; 
 		border: none;
 	}
 

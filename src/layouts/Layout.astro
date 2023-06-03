@@ -18,11 +18,7 @@ const { title } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
 <!--
-	"We keep moving forward, opening up new doors and
-	doing new things, because we're curious ...
-	and curiosity keeps leading us down new paths."
-		
-		- Walt Disney
+	"Sometimes all it takes, is someone that cares.."
 -->
 	<head>
 		<meta charset="UTF-8" />
@@ -49,10 +45,11 @@ const { title } = Astro.props;
 			<div >
 				<slot />
 			</div>
+			<div></div>
 		</content>		
-<!-- 		<rightsidebar style="background-color: rgba(0,0,0,0.1); color:white;">
+		<rightsidebar style="background-color: rgba(0,0,0,0.1); color:white;">
 		 <div>i am the right sidebar</div>
-		</rightsidebar> -->
+		</rightsidebar>
 	</wrapper>
 	</body>
 </html>
@@ -65,7 +62,7 @@ const { title } = Astro.props;
 		--accent-color: #ff5e00;
 		--accent: 235, 193, 77;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #ff5e00 30%, white 60%);
-		--sidebar-max-width: minmax(8rem,0);
+		--sidebar-max-width: minmax(7rem,0);
 		--sidebar-max-width-mobile: minmax(2rem,0);
 	}
 	html,body {
@@ -87,8 +84,8 @@ const { title } = Astro.props;
 	}
 	/* wrapper */
 	content{
-		margin:1em;
-		width:80%;
+		/* margin:1em; */
+		padding: 1em;
 	}
 
 	wrapper{
@@ -97,6 +94,7 @@ const { title } = Astro.props;
 		/*width right-sidebar*/
 		/* grid-template-columns: var(--sidebar-max-width) auto 20em; */
 		/* gap:1em; */
+		
 	}
 	@media (max-width: 600px) {
 		wrapper{

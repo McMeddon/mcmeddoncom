@@ -19,13 +19,15 @@ import McPing from '../components/McPing.astro'
         <!-- <li> <a href="/smp-dynmap/"> <img class="sidebar-img" src="https://www.svgrepo.com/show/1699/web-development.svg"> <center>SMP <br> Dynmap</center> </a></li> -->
         <li> <a target="_blank"href="http://play.mcmeddon.com:8123/?worldname=Gelazkor&mapname=surface&zoom=1&x=2381&y=64&z=2500"> <img class="sidebar-img" src="https://www.svgrepo.com/show/1699/web-development.svg"> <center>SMP <br> Dynmap</center> </a></li>
     </ul>
-    
 </menu>
 
 <style>
 
 .sidebar{    
-    width: var(--sidebar-max-width);
+    margin:0;
+    padding:0;
+    max-width: var(--sidebar-max-width);
+    /* max-width: 100%; */
     position: fixed;
     top: 0;
     left: 0;
@@ -34,7 +36,6 @@ import McPing from '../components/McPing.astro'
     height:100%;
     z-index: 999;
     /* border: 1px solid red; */
-    max-width: 100%;
     padding:1em;
 
 }
