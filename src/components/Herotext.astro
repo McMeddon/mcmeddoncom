@@ -12,7 +12,7 @@ const { h1, p, p2, body} = Astro.props;
 <div class="herotitlewrapper">
     <h1><span class="text-gradient">{h1}</span></h1>
     <hr>
-    <p>{p}<br>{p2} {body}</p>
+    <p>{p}<br>{p2} <slot></slot></p>
 </div>
 
 
