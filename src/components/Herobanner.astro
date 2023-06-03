@@ -13,14 +13,13 @@ import { Image, Picture } from "@astrojs/image/components";
     <a href={href}>
         <!-- width="1920px" -->
         <Picture class="heroimage" 
-        widths={[600, 1200, 1920]}
-        height={}
-        aspectRatio={2/1}
-        quality={50}
-        format={"avif"}
-        src={img} />
+            widths={[600, 1200, 1920]}
+            aspectRatio={2/1}
+            quality={50}
+            format={"avif"}
+            src={img} />
         
-        <div class="herobanner">
+        <div class="herobannertext">
             <h2 class="heroimagetitle ">{h2}</h2>
         </div>
         <!-- <p>{p}</p> -->
@@ -42,7 +41,7 @@ a {
         grid-template-rows: 1fr auto;
         margin-bottom:2em ;
     }
-    .herobanner {
+    .herobannertext {
         position: absolute;
         bottom: 0;
     }
@@ -103,7 +102,7 @@ a {
 		background-size: 400%;
 		border-radius: 25px;
 		background-position: 100%;
-		transition: background-position 1s cubic-bezier(0.22, 1, 0.36, 1);;
+		transition: background-position 1s cubic-bezier(0.22, 1, 0.36, 1);
 		
 	}
 	
