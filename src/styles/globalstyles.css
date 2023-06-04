@@ -41,10 +41,6 @@ hr {
 	}
 /*--------------------------------------------*/
 /* Desktop Fontsizes */
-@function 
-
-
-
 	h1 {font-size: calc(12px + 2.5vw);}
 	h2 {font-size: calc(12px + 2vw);}
 	h3 {font-size: calc(12px + 1vw);}
