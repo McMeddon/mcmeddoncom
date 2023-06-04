@@ -41,6 +41,8 @@ hr {
 	}
 /*--------------------------------------------*/
 /* Desktop Fontsizes */
+@function 
+
 
 
 	h1 {font-size: calc(12px + 2.5vw);}
@@ -53,6 +55,11 @@ p{
 	font-size: calc(12px + .6vw);
 	line-height: calc(1em + 0.4vw);
 }
+
+/* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+/* font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+/* for later*/
+
 /*--------------------------------------------*/
 /*--------------------------------------------*/
 /* Desktop weights */
