@@ -69,23 +69,25 @@ import McPing from '../components/McPing.astro'
     height: auto;}
 /* removing random padding fix */
 .sidebar ul {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    
     margin:0;
     padding: 0;
 }
 
 .sidebar ul > li {
     margin:0;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
     list-style-type: none;
 
     /* border: 1px solid blue; */
     width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 .sidebar ul > li > a {
-    
     grid-template-columns: auto;
     grid-template-rows: 1fr;
     width: 100%;
