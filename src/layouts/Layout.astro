@@ -47,7 +47,7 @@ const { title } = Astro.props;
 			</div>
 			<div></div>
 		</content>		
-		<!-- <rightsidebar style="background-color: rgba(0,0,0,0.1); color:white;">
+		<!-- <rightsidebar style="background-color: rgba(0,0,0,0.1);">
 		 <div>i am the right sidebar</div>
 		</rightsidebar> -->
 	</wrapper>
@@ -66,7 +66,7 @@ const { title } = Astro.props;
 		
 	}
 	html {
-		background-color:#111;
+		/* background-color:#111; */
 	}
 	
 	code {
@@ -76,13 +76,15 @@ const { title } = Astro.props;
 	/* wrapper */
 	content{
 		/* margin:1em; */
-		padding: 1em;
+		padding: calc(10px + 2rem);
+		color: var(--text-color);   
 	}
 
 	wrapper{
 		display:grid;
 		grid-template-columns: var(--sidebar-max-width) auto;
 		/*width right-sidebar*/
+		/* grid-template-columns: var(--sidebar-max-width) auto auto; */
 		/* grid-template-columns: var(--sidebar-max-width) auto 20em; */
 		/* gap:1em; */
 		
@@ -97,19 +99,11 @@ const { title } = Astro.props;
 	}
 	}
 
-	
-
-
 	@media (max-width: 600px) {		
 			wrapper{
 			display:grid;
 			grid-template-columns: var(--sidebar-max-width) auto;
 		}
 		content{margin:0em;width:100%;}
-	}
-	
-	main {
-        color: var(--text-color);   
-    }
-	
+	}	
 </style>
