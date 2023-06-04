@@ -51,11 +51,17 @@ const {playerCount } = Astro.props;
 
 <style>
 
+
+ .Pillcollection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+
+    @media (max-width: 600px) {
 .Pillcollection{ 
-    width:100%;  
-    align-items: center;
-    width: fit-content;
-    margin: 1em; 
+    display: none;    
+}
 }
 
 input[type="search"] {
@@ -67,7 +73,6 @@ input[type="search"] {
     border-radius: 100px;
     background-color: #333;
   }
-
 
 </style>
 </style>
