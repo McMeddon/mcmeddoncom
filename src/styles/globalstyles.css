@@ -12,9 +12,7 @@
 	--sidebar-max-width-mobile: minmax(2rem,0);
 }
 
-main {		
-		/* padding: 1.5rem; */
-	}
+
 	.wrapper{ 
 	max-width: 100% !important;
 	height:auto;
