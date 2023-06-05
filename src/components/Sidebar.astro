@@ -48,6 +48,13 @@ import McPing from '../components/McPing.astro'
 
 <style>
 
+
+
+
+
+
+
+/*-----------------------*/
 .sidebar{    
     margin:0;
     padding:0;
@@ -56,14 +63,22 @@ import McPing from '../components/McPing.astro'
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #2d2f31;
+    /* background-color: #2d2f31; */
+
+    background: rgba(51, 51, 51, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(7.9px);
+    -webkit-backdrop-filter: blur(7.9px);
+    border-right: 1px solid #222;
+
     min-height: 100vh;
     height:100%;
     z-index: 999;
     /* border: 1px solid red; */
     padding:1em;
-
 }
+/*-----------------------*/
+
 .sidebar-img{
     width: auto;
     height: auto;}
