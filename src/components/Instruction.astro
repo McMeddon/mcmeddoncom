@@ -11,9 +11,8 @@ const { h2, p, p2, note} = Astro.props;
 
 <p class="instructions">
 	<strong>{h2}</strong> <br>
-	{p} <br>
+	{p} 
     {p2} <slot></slot>
-	<code>{note}</code> 
 </p>
 
 <style>
@@ -26,14 +25,6 @@ const { h2, p, p2, note} = Astro.props;
 		padding: 1rem;
 		border-radius: 0.4rem;
         color:var(--accent) ;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
 	}
 	.instructions strong {
 		color: rgb(var(--accent));
