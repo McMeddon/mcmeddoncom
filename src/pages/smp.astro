@@ -6,9 +6,9 @@ import Herotext from '../components/Herotext.astro';
 /* import BBcode from '../components/bbcode.astro';*/
 import Instruction from '../components/Instruction.astro';
 import Pill from '../components/Pill.astro';
-/*import McPing from '../components/McPing.astro';
-import BGani from '../components/BG-animation.astro';
-import BGani2 from '../components/BG-animation2.astro'; */
+/* import McPing from '../components/McPing.astro'; */
+/* import BGani from '../components/BG-animation.astro';
+import BGani2 from '../components/BG-animation2.astro';  */
 
 export interface Props {
     title: string;
@@ -29,6 +29,12 @@ import { Image, Picture } from "@astrojs/image/components";
        <br>
        <button class="btn btn-light" >Join now</button>
        <button class="btn btn-primary" >See Dynmap</button>
+
+       <video class="videohero" width="100%" height="50vh" autoplay muted controls>
+        <source src="/images/smp/s4/s3cinmp4.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video>
+
        <br><br>
        
        <button class="btn btn-link" ><a href="">All details</a></button>
@@ -37,6 +43,7 @@ import { Image, Picture } from "@astrojs/image/components";
     <content>
         <div class="">
             <button class="btn btn-info" >  Joined since beginning: 370+</button>
+    
             <button class="btn btn-secondary" >  <a href="#" target="_blank">Season 1</a></button>
             <button class="btn btn-secondary" ><a href=#" target="_blank">Season 2</a></button>
             <button class="btn btn-secondary" ><a href="#" target="_blank">Season 3</a></button>
@@ -228,6 +235,22 @@ import { Image, Picture } from "@astrojs/image/components";
 
 
 <style>
+
+/* //.videohero add a black gradient over the video */
+
+
+.videohero{
+    opacity: 0.2;
+    z-index: -2;
+    height: fit-content;
+    
+    position: absolute;
+    justify-self: center;
+    align-self: center;
+    top: 0;
+    left: 0px;
+}
+
 hr{margin:5em;}
     .split2{
         display: grid;
