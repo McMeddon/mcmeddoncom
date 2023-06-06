@@ -31,32 +31,49 @@ import { Image, Picture } from "@astrojs/image/components";
    <link class="btn btn-primary" ><a href="">All details</a></button>
 </Herotext>
 
+
 <content>
+    
     <section class="split2">
-    <Picture class="heroimage" alt="banner image"
-        widths={[600, 1200, 1920]}
-        aspectRatio={1/1}
-        quality={50}
-        format={"avif"}
-        src="/images/smp/s4/4.png" />
-
-
-        <div>
-            <h2><i>A communtiy for explorers, <br>builders and kind people!</i></h2>
-        </div>
-    <section class="split2">
+        <section class="split2">
+            <Instruction
+                h2="How to join via Java?">
+                <br>
+                    IP:<code>play.mcmeddon.com</code> <br>Port:<code> 25565</code>
+                
+            </Instruction>
+            
+            <Instruction
+                h2="How to join via Bedrock?">
+                <br>
+                    IP:<code>play.mcmeddon.com</code> <br>Port:<code> 25565</code>
+                
+            </Instruction>
+        </section>
         <Instruction
-        title="How to join"
-        body=""
-        >
-        simply join the server with the <br>IP:<code> play.mcmeddon.com</code>
-        </Instruction>
-        <Card>hi</Card>
-        <Card>hi</Card>
-        <Card>hi</Card>
+                h2="How to get whitelisted?"
+                body="">
+                    - Join the discord server 
+                    <br>- Enter your name  in <code>#server-whitelist</code>
+                    <br>- or msg a staff member to get whitelisted.
+                    
+            </Instruction>
     </section>
-    </section>
-    <hr>
+
+        <section class="split2">
+            <Picture class="heroimage" alt="banner image"
+            widths={[600, 1200, 1920]}
+            aspectRatio={1/1}
+            quality={50}
+            format={"avif"}
+            src="/images/smp/s4/4.png" />
+
+            
+            <div>
+                <h2><i>A communtiy for explorers, <br>builders and kind people!</i></h2>
+            </div>
+            
+        </section>
 
     <Picture class="heroimage" alt="banner image"
     widths={[600, 1200, 1920]}
