@@ -34,15 +34,14 @@ import { Image, Picture } from "@astrojs/image/components";
        <button class="btn btn-link" ><a href="">All details</a></button>
     </Herotext>
     
-    
     <content>
-        <section class="">
+        <div class="">
             <button class="btn btn-info" >  Joined since beginning: 370+</button>
             <button class="btn btn-secondary" >  <a href="#" target="_blank">Season 1</a></button>
             <button class="btn btn-secondary" ><a href=#" target="_blank">Season 2</a></button>
             <button class="btn btn-secondary" ><a href="#" target="_blank">Season 3</a></button>
             <button class="btn btn-light" ><a href="#" target="_blank">Season 4</a></button>
-        </section>
+        </div>
         <section class="split2">
             <section class="split2">
             <Instruction
@@ -68,6 +67,41 @@ import { Image, Picture } from "@astrojs/image/components";
                     
             </Instruction>
     </section>
+    <section class="split4">
+        <Picture class="heroimage" alt="banner image"
+        widths={[600, 1200, 1920]}
+        aspectRatio={1/1}
+        quality={50}
+        format={"avif"}
+        src="/images/smp/s4/17.png" />
+
+        <Picture class="heroimage" alt="banner image"
+        widths={[600, 1200, 1920]}
+        aspectRatio={1/1}
+        quality={50}
+        format={"avif"}
+        src="/images/gelazkor/gelazkor1b.png" />
+
+        <Picture class="heroimage" alt="banner image"
+        widths={[600, 1200, 1920]}
+        aspectRatio={1/1}
+        quality={50}
+        format={"avif"}
+        src="/images/gelazkor/gelazkoro.png" />
+
+        <Picture class="heroimage" alt="banner image"
+        widths={[600, 1200, 1920]}
+        aspectRatio={1/1}
+        quality={50}
+        format={"avif"}
+        src="/images/smp/s4/23.png" />
+    </section>
+    <Picture class="heroimage" alt="banner image"
+    widths={[600, 1200, 1920]}
+    aspectRatio={3/1}
+    quality={50}
+    format={"avif"}
+    src="/images/smp/s4/2.png" />
 
         <section class="split2">
             <Picture class="heroimage" alt="banner image"
@@ -84,12 +118,7 @@ import { Image, Picture } from "@astrojs/image/components";
             
         </section>
 
-    <Picture class="heroimage" alt="banner image"
-    widths={[600, 1200, 1920]}
-    aspectRatio={3/1}
-    quality={50}
-    format={"avif"}
-    src="/images/smp/s4/2.png" />
+   
 
     <section class="split2">
         <Picture class="heroimage" alt="banner image"
@@ -154,7 +183,45 @@ import { Image, Picture } from "@astrojs/image/components";
             format={"avif"}
             src="/images/gelazkor/gelazkoro.png" />
         </section>
-        <hr>
+        <section class="split4">
+            <Picture class="heroimage" alt="banner image"
+            widths={[600, 1200, 1920]}
+            aspectRatio={1/1}
+            quality={50}
+            format={"avif"}
+            src="/images/smp/s4/15.png" />
+    
+            <Picture class="heroimage" alt="banner image"
+            widths={[600, 1200, 1920]}
+            aspectRatio={1/1}
+            quality={50}
+            format={"avif"}
+            src="/images/smp/s4/10.png" />
+
+            <Picture class="heroimage" alt="banner image"
+            widths={[600, 1200, 1920]}
+            aspectRatio={1/1}
+            quality={50}
+            format={"avif"}
+            src="/images/smp/s4/18.png" />
+    
+            <Picture class="heroimage" alt="banner image"
+            widths={[600, 1200, 1920]}
+            aspectRatio={1/1}
+            quality={50}
+            format={"avif"}
+            src="/images/smp/s4/19.png" />
+        
+        </section>
+<!--         <Picture class="heroimage" alt="banner image"
+        widths={[600, 1200, 1920]}
+        aspectRatio={3/1}
+        quality={50}
+        format={"avif"}
+        src="/images/smp/s4/17.png" /> -->
+
+
+
 </content>
 
 </Layout>
@@ -163,8 +230,6 @@ import { Image, Picture } from "@astrojs/image/components";
 <style>
 hr{margin:5em;}
     .split2{
-        margin-top: 2em;
-        margin-bottom: 2em;
         display: grid;
         grid-template-columns: 1fr 1fr;
         flex-direction: row;
@@ -173,6 +238,27 @@ hr{margin:5em;}
         gap: 2em;
     }
 
+    .split3{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2em;
+    }
+
+    .split4{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2em;
+    }
+    img {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
 html {
     scroll-behavior: smooth;
 }
