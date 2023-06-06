@@ -5,6 +5,7 @@ import Card from '../components/Card.astro';
 import Herotext from '../components/Herotext.astro';
 /* import BBcode from '../components/bbcode.astro';*/
 import Instruction from '../components/Instruction.astro';
+import Pill from '../components/Pill.astro';
 /*import McPing from '../components/McPing.astro';
 import BGani from '../components/BG-animation.astro';
 import BGani2 from '../components/BG-animation2.astro'; */
@@ -18,24 +19,32 @@ import { Image, Picture } from "@astrojs/image/components";
 ---
 
 <Layout title="McMeddons Community Server">	
-
-
-    <Herotext 
-    h1="McMeddons Community Server"
-   p="Play now togehter on custom worlds of McMeddon, where you can enjoy survival mode, trade with other players, and explore new maps every season. Read on to find out more about this server and how to get started.">
-   <br>
-   <button class="btn btn-light" >Join now</button>
-   <button class="btn btn-primary" >See Dynmap</button>
-   <br><br>
-   
-   <link class="btn btn-primary" ><a href="">All details</a></button>
-</Herotext>
-
-
-<content>
     
-    <section class="split2">
+
+
+    <Herotext
+       h1="McMeddons Community Server"
+       p="Play now togehter on custom worlds of McMeddon, where you can enjoy survival mode, trade with other players, and explore new maps every season. Read on to find out more about this server and how to get started."
+       >
+       <br>
+       <button class="btn btn-light" >Join now</button>
+       <button class="btn btn-primary" >See Dynmap</button>
+       <br><br>
+       
+       <button class="btn btn-link" ><a href="">All details</a></button>
+    </Herotext>
+    
+    
+    <content>
+        <section class="">
+            <button class="btn btn-info" >  Joined since beginning: 370+</button>
+            <button class="btn btn-secondary" >  <a href="#" target="_blank">Season 1</a></button>
+            <button class="btn btn-secondary" ><a href=#" target="_blank">Season 2</a></button>
+            <button class="btn btn-secondary" ><a href="#" target="_blank">Season 3</a></button>
+            <button class="btn btn-light" ><a href="#" target="_blank">Season 4</a></button>
+        </section>
         <section class="split2">
+            <section class="split2">
             <Instruction
                 h2="How to join via Java?">
                 <br>
