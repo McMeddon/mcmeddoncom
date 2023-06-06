@@ -11,9 +11,9 @@ const { h2, p, p2, note} = Astro.props;
 
 <p class="instructions">
 	<strong>{h2}</strong> <br>
-	<code>{note}</code> 
 	{p} <br>
-    {p2}
+    {p2} <slot></slot>
+	<code>{note}</code> 
 </p>
 
 <style>

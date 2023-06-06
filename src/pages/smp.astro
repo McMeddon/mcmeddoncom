@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Herobanner from '../components/Herobanner.astro';
+import Card from '../components/Card.astro';
+import Herotext from '../components/Herotext.astro';
+/* import BBcode from '../components/bbcode.astro';*/
+import Instruction from '../components/Instruction.astro';
+/*import McPing from '../components/McPing.astro';
+import BGani from '../components/BG-animation.astro';
+import BGani2 from '../components/BG-animation2.astro'; */
+
+export interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+import { Image, Picture } from "@astrojs/image/components";
+---
+
+<Layout title="McMeddons Community Server">	
+
+
+    <Herotext 
+    h1="McMeddons Community Server"
+   p="Play now togehter on custom worlds of McMeddon, where you can enjoy survival mode, trade with other players, and explore new maps every season. Read on to find out more about this server and how to get started.">
+   <br>
+   <button class="btn btn-light" >Join now</button>
+   <button class="btn btn-primary" >See Dynmap</button>
+   <br><br>
+   
+   <link class="btn btn-primary" ><a href="">All details</a></button>
+</Herotext>
+
+<content>
+    <section class="split2">
+    <Picture class="heroimage" alt="banner image"
+        widths={[600, 1200, 1920]}
+        aspectRatio={1/1}
+        quality={50}
+        format={"avif"}
+        src="/images/smp/s4/4.png" />
+
+
+        <div>
+            <h2><i>A communtiy for explorers, <br>builders and kind people!</i></h2>
+        </div>
+    <section class="split2">
+        <Instruction
+        title="How to join"
+        body=""
+        >
+        simply join the server with the <br>IP:<code> play.mcmeddon.com</code>
+        </Instruction>
+        <Card>hi</Card>
+        <Card>hi</Card>
+        <Card>hi</Card>
+    </section>
+    </section>
+    <hr>
+
+    <Picture class="heroimage" alt="banner image"
+    widths={[600, 1200, 1920]}
+    aspectRatio={3/1}
+    quality={50}
+    format={"avif"}
+    src="/images/smp/s4/2.png" />
+
+    <section class="split2">
+        <Picture class="heroimage" alt="banner image"
+        widths={[600, 1200, 1920]}
+        aspectRatio={1/1}
+        quality={50}
+        format={"avif"}
+        src="/images/smp/s4/7.png" />
+
+        <Picture class="heroimage" alt="banner image"
+        widths={[600, 1200, 1920]}
+        aspectRatio={1/1}
+        quality={50}
+        format={"avif"}
+        src="/images/smp/s4/6.png" />
+    
+    </section>
+
+    <Picture class="heroimage" alt="banner image"
+    widths={[600, 1200, 1920]}
+    aspectRatio={3/1}
+    quality={50}
+    format={"avif"}
+    src="/images/smp/s4/3.png" />
+
+    <section class="split2">
+        <Picture class="heroimage" alt="banner image"
+        widths={[600, 1200, 1920]}
+        aspectRatio={1/1}
+        quality={50}
+        format={"avif"}
+        src="/images/smp/s4/9.png" />
+
+        <Picture class="heroimage" alt="banner image"
+        widths={[600, 1200, 1920]}
+        aspectRatio={1/1}
+        quality={50}
+        format={"avif"}
+        src="/images/smp/s4/13.png" />
+    
+    </section>
+    <Picture class="heroimage" alt="banner image"
+    widths={[600, 1200, 1920]}
+    aspectRatio={3/1}
+    quality={50}
+    format={"avif"}
+    src="/images/smp/s4/14.png" />
+<hr>
+
+    <section class="split2">
+            <div>
+                <h2><i>Play, trade, adventure or <br>explore the latest custom Maps</i></h2>
+                <p>
+                    
+
+            </div>
+
+            <Picture class="heroimage" alt="banner image"
+            widths={[600, 1200, 1920]}
+            aspectRatio={1/1}
+            quality={50}
+            format={"avif"}
+            src="/images/gelazkor/gelazkoro.png" />
+        </section>
+        <hr>
+</content>
+
+</Layout>
+
+
+<style>
+hr{margin:5em;}
+    .split2{
+        margin-top: 2em;
+        margin-bottom: 2em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2em;
+    }
+
+html {
+    scroll-behavior: smooth;
+}
+</style>

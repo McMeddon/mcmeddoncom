@@ -23,7 +23,7 @@
 	color: #ededed;
 }
 
-img, Image{ 
+img, Image, Picture{ 
 	width: 100%;
 	overflow: hidden;
 	width: fit-content;
