@@ -27,31 +27,32 @@
 }
 
 .btn-secondary { 
-    background-color:transparent; 
+    background-color:#222; 
     color:white; 
 
 }
 .btn-success   { background-color:limegreen;  color:white;}
 .btn-danger    { background-color:rgb(158, 0, 0); color:white;}
 .btn-warning   { background-color:darkorange;}
-.btn-info      { background: rgba(var(--accent), 12%); color: rgb(var(--accent)) ;}
+.btn-info      { background: rgba(var(--accent), 12%); color: rgb(var(--accent));}
 .btn-light     { background-color:white;}
 .btn-dark      { background-color:black; color:white; border:3px solid #222;}
-/* .btn-link      { background-color:goldenrod;} */
+.btn-link      { background-color:transparent;}
 
 /*------------------------------------*/
 /*--#BUTTON border colors----------------------------------*/
 
-.btn-outline { background-color:transparent; color:white; border:1px solid;}
-.btn           {  }
+.btn-outline { background-color:transparent; color:white;}
+.btn           { border:3px solid #222; }
 .btn-primary   { border:3px solid #222; }
-.btn-secondary { border: 3px solid #333 }
-.btn-success   {  }
-.btn-danger    {  }
-.btn-warning   {  }
-.btn-info      {  }
-.btn-light     {  }
-.btn-dark      {  }
+.btn-secondary { border:3px solid #333; }
+.btn-success   { border:3px solid #222;  }
+.btn-danger    { border:3px solid #222;  }
+.btn-warning   { border:3px solid #222;  }
+.btn-info      { border:3px solid rgb(var(--accent), 12%)  }
+.btn-light     { border:3px solid #999;  }
+.btn-dark      { border:3px solid #222;  }
+.btn-link      { border:3px solid transparent; color: inherit; text-decoration: underline; }
 
 
 /*------------------------------------*/
@@ -60,7 +61,7 @@
 /* //add a glowing effect to the button on hover */
 .btn:is(:hover, :focus-within) {    filter: brightness(1.5);  }
 
-.btn-outline:hover { background-color:transparent; color:white; border:1px solid;}
+.btn-outline:hover { background-color:transparent; color:white; }
 .btn:hover           { color: var(--accent2);  }
 .btn-primary:hover   { border:3px solid #222; }
 .btn-secondary:hover { border: 3px solid #333 }
@@ -83,6 +84,20 @@ grid{
 
 }
 /*------------------------------------*/
-.pilled, circle{
+.pilled, .circle{
     border-radius: 100px;
+}
+   
+.circle{ aspect-ratio: 1 / 1;
+}
+
+.btn a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn img {
+    max-width: 12px;
+    color: white;
+    filter: invert(1);
 }
