@@ -5,6 +5,7 @@ import Card from '../components/Card.astro';
 import Herotext from '../components/Herotext.astro';
 /* import BBcode from '../components/bbcode.astro';*/
 import Instruction from '../components/Instruction.astro';
+import Herovideo from '../components/Herovideo.astro';
 import Pill from '../components/Pill.astro';
 /* import McPing from '../components/McPing.astro'; */
 /* import BGani from '../components/BG-animation.astro';
@@ -20,7 +21,9 @@ import { Image, Picture } from "@astrojs/image/components";
 
 <Layout title="McMeddons Community Server">	
     
-
+<Herovideo
+    src="/videos/herovidmcs7.mp4">
+</Herovideo>
 
     <Herotext
        h1="McMeddons Community Server, the Creative Coop Survival Adventure SMP"
@@ -32,12 +35,7 @@ import { Image, Picture } from "@astrojs/image/components";
        <button class="btn btn-light" ><a href="http://discord.mcmeddon.com" target="_blank">Join now</a></button>
        <button class="btn btn-primary" ><a href="http://play.mcmeddon.com:8123/?worldname=Gelazkor&mapname=surface&zoom=1&x=2381&y=64&z=2500" target="_blank">See Dynmap</a></button>
        
-       <div class="videowrapper">
-            <video class="videohero"autoplay muted>
-           <source src="/images/smp/s4/s3cinmp4.mp4" type="video/mp4">
-           Your browser does not support the video tag.
-        </video>
-        </div>
+
         
        <br><br>
        
@@ -252,21 +250,6 @@ import { Image, Picture } from "@astrojs/image/components";
 /* //.videohero add a black gradient over the video */
 
 
-.videohero{
-    width: 100%;
-    height: calc((80vh + 100vw)/3.4);
-    object-fit: fill;
-    opacity: 0.3;
-    z-index: -2;
-    object-fit: cover;       
-    position: absolute;
-    justify-self: center;
-    align-self: center;
-    top: 0;
-    left: 0px;
-    box-shadow: 0 0 30px 11px black;
-    filter:blur(2px)
-}
 
 hr{margin:5em;}
     .split2{
