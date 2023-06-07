@@ -61,7 +61,7 @@
 /* //add a glowing effect to the button on hover */
 .btn:is(:hover, :focus-within) {    filter: brightness(1.5);  }
 
-.btn-outline:hover { background-color:transparent; color:white; }
+.btn-outline:hover { background-color:transparent; color:white; border-color: rgba(var(--accent2));}
 .btn:hover           { color: var(--accent2);  }
 .btn-primary:hover   { border:3px solid #222; }
 .btn-secondary:hover { border: 3px solid #333 }
