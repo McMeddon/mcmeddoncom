@@ -5,6 +5,8 @@ export interface Props {
 
 const {src} = Astro.props;
 ---
+
+
 <div class="videowrapper">
 	<video class="videohero"autoplay muted loop>
    <source src={src} type="video/mp4">
@@ -14,19 +16,21 @@ const {src} = Astro.props;
 
 <style>
 
+
+.videowrapper{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	z-index: -2;
+}
+
 .videohero{
-    width: 100%;
-    height: calc((80vh + 80vw)/3.4);
-    object-fit: fill;
-    opacity: 0.5;
-    z-index: -2;
-    object-fit: cover;       
-    position: absolute;
-    justify-self: center;
-    align-self: center;
-    top: 0;
-    left: 0px;
-    box-shadow: 0 0 30px 11px black;
-    filter:blur(1px)
+	width:100%;
+	object-fit: cover;
+	height:73vh;
+	
+	filter: blur(2px);
+	opacity: .5;
 }
 </style>
