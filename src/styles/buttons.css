@@ -34,7 +34,7 @@
 .btn-success   { background-color:limegreen;  color:white;}
 .btn-danger    { background-color:rgb(158, 0, 0); color:white;}
 .btn-warning   { background-color:darkorange;}
-.btn-info      { background: rgba(var(--accent), 12%); color: rgb(var(--accent));}
+.btn-info      { background: rgba(var(--accent), 5%); color: rgb(var(--accent));}
 .btn-light     { background-color:white;}
 .btn-dark      { background-color:black; color:white; border:3px solid #222;}
 .btn-link      { background-color:transparent;}
@@ -65,9 +65,9 @@
 .btn:hover           { color: var(--accent2);  }
 .btn-primary:hover   { border:1px solid #222; }
 .btn-secondary:hover { border: 1px solid #333 }
-.btn-success:hover   {  }
-.btn-danger:hover    {  }
-.btn-warning:hover   {  }
+.btn-success:hover   { color:white;}
+.btn-danger:hover    { color:white;}
+.btn-warning:hover   { color:black;}
 .btn-info:hover      {  }
 .btn-light:hover     {  }
 .btn-dark:hover      {  }
