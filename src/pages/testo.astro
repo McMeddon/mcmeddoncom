@@ -2,6 +2,7 @@
 import Herotext from '../components/Herotext.astro';
 import Layout from '../layouts/Layout.astro';
 import Herotext from '../components/Herotext.astro';
+import AccordionFeatured from '../components/AccordionFeatured.astro';
 ---
 <Layout>
 
@@ -17,7 +18,13 @@ import Herotext from '../components/Herotext.astro';
     </Herotext>
             
 
-<h1> Overview Buttons</h1>
+
+    <hr>
+    <AccordionFeatured></AccordionFeatured>
+
+    <hr>
+
+<h2> Overview Buttons</h2>
 <div class="d-flex gap-2 justify-content-center py-5">
     <button class="btn btn-primary pilled" type="button">Primary</button>
     <button class="btn btn-secondary pilled " type="button">Secondary</button>
