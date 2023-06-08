@@ -5,6 +5,7 @@ import '../styles/globalstyles.css';
 import Pilcollection from '../components/Pillcollection.astro';
 import BGani from '../components/BG-animation.astro';
 import BGani2 from '../components/BG-animation2.astro';
+/* import { Image, Picture } from "@astrojs/image/components"; */
 
 
 // export interface Props {
@@ -27,17 +28,21 @@ const { title } = Astro.props;
 		<meta name="description" content="The home for Advanced Survival Friendly Vanilla Minecraft Landscapes, Maps and Worlds by McMeddon" />
 		<title>{title}</title>
 		
+		<!-- Load stylesheet -->
+		<!-- <link rel="stylesheet" href="./node_modules/vanilla-cookieconsent/dist/cookieconsent.css"> -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.css">
+		
+		<!-- Load stylesheet -->
 		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
 		<link rel="manifest" href="/favicon/site.webmanifest">
 	</head>
 	<body>	
-
-	<!-- <menuplaceholder></menuplaceholder> -->
-	<wrapper>
-		<sidebar ><Sidebar /></sidebar>
-		<content>
+		
+		<wrapper>
+			<sidebar ><Sidebar /></sidebar>
+			<content>
 			<Pilcollection/>
 			<background>
 				<BGani />
@@ -51,7 +56,39 @@ const { title } = Astro.props;
 		<!-- <rightsidebar style="background-color: rgba(0,0,0,0.1);">
 		 <div>i am the right sidebar</div>
 		</rightsidebar> -->
+		
 	</wrapper>
+	 
+	<!-- Load cookie consent -->
+	 
+
+	<!-- Google tag (gtag.js) -->
+		<script 
+		async 
+		src="https://www.googletagmanager.com/gtag/js?id=G-3145204CFM"
+		type="text/plain"
+    	data-cookiecategory="analytics"
+		>
+		console.log('"analyticstag" category accepted');
+		</script>
+		
+		<script
+		type="text/plain"
+    	data-cookiecategory="analytics"
+		>
+
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-3145204CFM');		
+			console.log('"analytics" category accepted');
+		</script>
+
+		<!-- Load cookie consent -->
+		<script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.js"></script>
+		<script defer src=".././js/cookieconsent-init.js"></script>
+	 
+		
 	</body>
 </html>
 <style is:global>
