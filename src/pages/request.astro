@@ -26,10 +26,10 @@ const { title } = Astro.props;
 		body=""
 		>
 	</Herotext>
-	<div class="gform">
+		<div class="gformwrapper">
 		
 		<div class="skeleton" style="">
-			<iframe class="gform"src="https://docs.google.com/forms/d/e/1FAIpQLSdl7xhl_N6uXFkR0-ha-issucwTmc94E3wmdjcBN5yD0OgSig/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>		</div>
+			<iframe class="gform"src="https://docs.google.com/forms/d/e/1FAIpQLSdl7xhl_N6uXFkR0-ha-issucwTmc94E3wmdjcBN5yD0OgSig/viewform?embedded=true" height="2024px"frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>		</div>
 		
 		<div class="instruction">	
 			<Instruction
@@ -72,19 +72,27 @@ const { title } = Astro.props;
 .instruction {
 	width: fit-content;
 }
-.gform{
+.gformwrapper{
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
 	gap: 1em
 }
+
+@media only screen and (min-width: 1024px) {
+  .gformwrapper {
+    display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1em
+  }
+}
 iframe{
-	border-radius: 0;
+
 }
 
-html{
-scrollbar-color: black;
-scrollbar-width: thin;
-}
+
+/*------------------------------------*/
+
+
 
 /*------------------------------------*/
 .skeleton {
