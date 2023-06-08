@@ -51,7 +51,7 @@ cc.run({
         'en': {
             consent_modal: {
                 title: 'mmmhhhmm ookies! 🍪',
-                description: 'Hi, this website uses cookies to understand how you interact with the site. Which will be set only after consent. <button type="button" data-cc="c-settings" class="cc-link">Let me choose</button>',
+                description: 'Hi, this website uses cookies to understand how you interact with the site. <button type="button" data-cc="c-settings" class="cc-link">Let me choose</button>',
                 //description: 'Hi, this website uses some cookies to ensure its proper operation and tracking cookies to understand how you interact with it. The latter will be set only after consent. <button type="button" data-cc="c-settings" class="cc-link">Let me choose</button>',
                 primary_btn: {
                     text: 'Accept all',
@@ -91,14 +91,14 @@ cc.run({
                         description: 'These cookies allow the website to remember the choices you have made in the past',
                         toggle: {
                             value: 'analytics',     // your cookie category
-                            enabled: false,
+                            enabled: true,
                             readonly: false
                         },
                         cookie_table: [             // list of all expected cookies
                             {
                                 col1: '^_ga',       // match all cookies starting with "_ga"
                                 col2: 'google.com',
-                                col3: '2 years',
+                                col3: '90 days',
                                 col4: 'description ...',
                                 is_regex: true
                             },
@@ -109,7 +109,7 @@ cc.run({
                                 col4: 'description ...',
                             }
                         ]
-                    }, {
+                    }, /* {
                         title: 'Advertisement and Targeting cookies',
                         description: 'These cookies collect information about how you use the website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you',
                         toggle: {
@@ -117,7 +117,7 @@ cc.run({
                             enabled: false,
                             readonly: false
                         }
-                    }, {
+                    }, */ {
                         title: 'More information',
                         description: 'For any queries in relation to our policy on cookies and your choices, please <a class="cc-link" href="http://twitter.mcmeddon.com" target="_blank">contact us</a>.',
                     }
