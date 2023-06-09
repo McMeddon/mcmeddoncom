@@ -10,7 +10,7 @@ import { Image, Picture } from "@astrojs/image/components";
 
 <!--panel item -->        
 <div class="accordion-panel">
-    <h3 id="panel-heading1">
+    <h3 id="panel-heading">
         <button
         type="button"
         aria-controls="panel1"
@@ -34,7 +34,7 @@ import { Image, Picture } from "@astrojs/image/components";
         quality={50}
         format={"avif"}
         src="../images/akonlyx/1.png" />
-        <a target="_blank" href="https://www.planetminecraft.com/project/akonlyx/"><button class="btn btn-primary accordion-button">Check on PMC</button></a>
+        <a target="_blank" href="https://www.planetminecraft.com/project/akonlyx/"><button class="btn btn-primary accordion-button">View on PMC</button></a>
         <!-- <p>super awesome duper Content Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam saepe itaque aut iste neque sint voluptates, dignissimos, quod pariatur incidunt tempore accusamus sit enim mollitia accusantium laborum! Est, magni error.</p> -->
     </div>
 </div> 
@@ -42,7 +42,7 @@ import { Image, Picture } from "@astrojs/image/components";
 
 <!--panel item -->        
 <div class="accordion-panel">
-    <h3 id="panel-heading1">
+    <h3 id="panel-heading">
         <button
         type="button"
         aria-controls="panel1"
@@ -68,14 +68,14 @@ import { Image, Picture } from "@astrojs/image/components";
         format={"avif"}
         src="../images/kekaterra/2.png" />
 
-        <a href="https://www.planetminecraft.com/project/Kekaterra/" target="_blank"><button class="btn btn-primary accordion-button">Check on PMC</button></a>
+        <a href="https://www.planetminecraft.com/project/Kekaterra/" target="_blank"><button class="btn btn-primary accordion-button">View on PMC</button></a>
         <!-- <p>super awesome duper Content Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam saepe itaque aut iste neque sint voluptates, dignissimos, quod pariatur incidunt tempore accusamus sit enim mollitia accusantium laborum! Est, magni error.</p> -->
     </div>
 </div>
 
 <!--panel item -->        
         <div class="accordion-panel">
-            <h3 id="panel-heading1">
+            <h3 id="panel-heading">
                 <button
                 type="button"
                 aria-controls="panel1"
@@ -100,7 +100,7 @@ import { Image, Picture } from "@astrojs/image/components";
                     format={"avif"}
                     src="../images/jesankor/00.png" />
 
-                <a href="https://www.planetminecraft.com/project/Jesankor/" target="_blank"><button class="btn btn-primary accordion-button">Check on PMC</button></a>
+                <a href="https://www.planetminecraft.com/project/Jesankor/" target="_blank"><button class="btn btn-primary accordion-button">View on PMC</button></a>
                 <!-- <p>super awesome duper Content Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam saepe itaque aut iste neque sint voluptates, dignissimos, quod pariatur incidunt tempore accusamus sit enim mollitia accusantium laborum! Est, magni error.</p> -->
             </div>
         </div>
@@ -109,7 +109,7 @@ import { Image, Picture } from "@astrojs/image/components";
 
 <!--panel item -->        
 <div class="accordion-panel">
-    <h3 id="panel-heading1">
+    <h3 id="panel-heading">
         <button
         type="button"
         aria-controls="panel1"
@@ -141,7 +141,7 @@ import { Image, Picture } from "@astrojs/image/components";
 
 <!--panel item -->        
 <div class="accordion-panel">
-    <h3 id="panel-heading1">
+    <h3 id="panel-heading">
         <button
         type="button"
         aria-controls="panel1"
@@ -173,7 +173,7 @@ import { Image, Picture } from "@astrojs/image/components";
 
 <!--panel item -->        
 <div class="accordion-panel">
-    <h3 id="panel-heading1">
+    <h3 id="panel-heading">
         <button
         type="button"
         aria-controls="panel1"
@@ -197,7 +197,7 @@ import { Image, Picture } from "@astrojs/image/components";
         quality={50}
         format={"avif"}
         src="../images/yorotorm/2.png" />
-        <a target="_blank" href="https://www.planetminecraft.com/project/Yorotorm/"><button class="btn btn-primary accordion-button">Check on PMC</button></a>
+        <a target="_blank" href="https://www.planetminecraft.com/project/Yorotorm/"><button class="btn btn-primary accordion-button">View on PMC</button></a>
         <!-- <p>super awesome duper Content Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam saepe itaque aut iste neque sint voluptates, dignissimos, quod pariatur incidunt tempore accusamus sit enim mollitia accusantium laborum! Est, magni error.</p> -->
     </div>
 </div> 
@@ -205,7 +205,7 @@ import { Image, Picture } from "@astrojs/image/components";
 
 <!--panel item -->        
         <div class="accordion-panel">
-            <h3 id="panel-heading2">
+            <h3 id="panel-heading">
                 <button
                 type="button"
                 aria-controls="panel1"
@@ -230,7 +230,7 @@ import { Image, Picture } from "@astrojs/image/components";
                     format={"avif"}
                     src="../images/wullestor/L.png" />
                 <!-- <p><br>super awesome duper Content Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam saepe itaque aut iste neque sint voluptates, dignissimos, quod pariatur incidunt tempore accusamus sit enim mollitia accusantium laborum! Est, magni error.</p> -->
-                <a target="_blank" href="https://www.planetminecraft.com/project/wullestor/"><button class="btn btn-primary accordion-button">Check on PMC</button></a>
+                <a target="_blank" href="https://www.planetminecraft.com/project/wullestor/"><button class="btn btn-primary accordion-button">View on PMC</button></a>
             </div>
         </div>
     </div>
@@ -262,18 +262,24 @@ import { Image, Picture } from "@astrojs/image/components";
     }
 
     
-    .panel-heading{ color: white;}
+    .panel-heading{ color: white; margin:1em;}
     .accordion-panel{ 
-
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        align-items: first baseline;
+        
         min-height: 5vh;
         position: relative;
         isolation: isolate;
-        padding: var(--_panel-padding);
+        
+        
         
         flex-basis: calc((var(--_button-size) + (var(--_panel-padding))*2)/2);
         overflow: hidden;
         border-radius: calc(var(--_button-size) + (var(--_panel-padding)*2)/2);
         transition: flex-basis 0.2s ease-in-out;
+        padding:var(--_panel-padding);
     }
     .accordion-panel:has([aria-expanded="true"]){ 
         /* transform: translateY(0); */
@@ -287,11 +293,20 @@ import { Image, Picture } from "@astrojs/image/components";
         filter: brightness(1);
     }
     .accordion-button {
-        position: absolute;
-        bottom: calc(var(--_panel-padding));
-        right: calc(var(--_panel-padding)*3);
+        display:flex;
+        float:right;
+        align-items: center;
+        margin-top: 5em;
+        /* bottom: calc(var(--_panel-padding)); */
+        
+        
         z-index: 1;
     }
+
+ /*    @media screen and (max-width:600px){
+        .accordion-button{display:none;}
+    } */
+
     .accordion-content > p {
         opacity: 0;
         transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
@@ -310,19 +325,20 @@ import { Image, Picture } from "@astrojs/image/components";
 
     .accordion-trigger{ 
         height: var(--_button-size);
-        font-size:3rem;
+        font-size:2rem;
         font-weight:800;
         color: inherit;
         display:flex;
         align-items: center;
         flex-direction:row-reverse;
         background: transparent;
-        padding:var(--_panel-padding);
+        
         border:0;
     }
 
     .panel-header{ 
         color: inherit;
+        padding: var(--_panel-padding);
     }
 
     
