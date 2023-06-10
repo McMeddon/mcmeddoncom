@@ -8,7 +8,7 @@ const {src} = Astro.props;
 
 
 <div class="videowrapper">
-	<video class="videohero"autoplay muted loop>
+	<video class="videohero"autoplay muted loop preload="none" loading="lazy">
    <source src={src} type="video/mp4">
    Your browser does not support the video tag.
 </video>
