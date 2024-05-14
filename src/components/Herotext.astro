@@ -9,7 +9,7 @@ export interface Props {
 const { h1, p, p2, body} = Astro.props;
 ---
 
-<div class="herotitlewrapper">
+<div class="herotitlewrapper text-5xl font-bold">
     <h1><span class="text-gradient">{h1}</span></h1>
     <hr>
     <p>{p}<br>{p2} <slot></slot></p>

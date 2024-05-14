@@ -1,62 +1,71 @@
 ---
-import McPing from '../components/McPing.astro'
+import { Image, Picture } from 'astro:assets'
 ---
 
 
-<menu class="sidebar"> 
+<menu class="menubar"> 
     <ul>
         <li> 
             <a target="" href="/index.html">
-                 <img class="sidebar-img" src="/logo.png" alt="logo">
+                 <Image 
+                 class="menubar-img" 
+                 src={import(`/public/favicon/favicon-32x32.png`)} 
+                 alt="logo" 
+                 height={32} 
+                 width={32}
+                 quality="low"
+                 decoding="async"
+                 loading="eager"
+                 >
             </a>
         </li>
         <li> 
-            <a target="_blank" href="https://www.planetminecraft.com/member/mcmeddon/submissions/?morder=order_latest">
-                <img class="sidebar-img" src="/ui/dices.svg" alt="list icon"> All Maps
-                <!-- <img class="sidebar-img" src="https://www.svgrepo.com/show/355797/dices.svg" alt="list icon"> All Maps -->
+            <a target="" href="/maps/index.html">
+                <img class="menubar-img" src="/ui/dices.svg" alt="list icon"> All Maps
+                <!-- <img class="menubar-img" src="https://www.svgrepo.com/show/355797/dices.svg" alt="list icon"> All Maps -->
              </a>
             </li>
         <li> 
             <a target="_blank" href="https://www.planetminecraft.com/blog/mcmeddons-roadmap/">
-                 <img class="sidebar-img" src="/ui/path.svg" alt="Roadmap Icon"> Roadmap
-                 <!-- <img class="sidebar-img" src="https://www.svgrepo.com/show/355872/path.svg" alt="Roadmap Icon"> Roadmap -->
+                 <img class="menubar-img" src="/ui/path.svg" alt="Roadmap Icon"> Roadmap
+                 <!-- <img class="menubar-img" src="https://www.svgrepo.com/show/355872/path.svg" alt="Roadmap Icon"> Roadmap -->
             </a>
         </li>
         <li> 
             <a href="/request">
-                 <img class="sidebar-img" src="/ui/bulb.svg" alt="Roadmap Icon"> Feature <br> Request
-                 <!-- <img class="sidebar-img" src="https://www.svgrepo.com/show/507962/bulb-on.svg" alt="Roadmap Icon"> Roadmap -->
+                 <img class="menubar-img" src="/ui/bulb.svg" alt="Roadmap Icon"> Feature <br> Request
+                 <!-- <img class="menubar-img" src="https://www.svgrepo.com/show/507962/bulb-on.svg" alt="Roadmap Icon"> Roadmap -->
             </a>
         </li>
         <li> 
             <a target="_blank" href="https://www.planetminecraft.com/blog/mcmeddons-map-update-history/">
-                <img class="sidebar-img" src="/ui/history.svg" alt="history icon"> Update<br>History
-                <!-- <img class="sidebar-img" src="https://www.svgrepo.com/show/509998/history.svg" alt="history icon"> Update<br>History -->
+                <img class="menubar-img" src="/ui/history.svg" alt="history icon"> Update<br>History
+                <!-- <img class="menubar-img" src="https://www.svgrepo.com/show/509998/history.svg" alt="history icon"> Update<br>History -->
             </a>
         </li>
         <li> 
             <a href="/smp/">
-                <img style="filter:grayscale(1);padding-bottom: 3px;"class="sidebar-img" src="/logos/server-icon.png" alt="SMP icon"> SMP
-                <!-- <img class="sidebar-img" src="https://www.svgrepo.com/show/509998/history.svg" alt="history icon"> Update<br>History -->
+                <img style="filter:grayscale(1);padding-bottom: 3px;"class="menubar-img" src="/logos/server-icon.png" alt="SMP icon"> SMP
+                <!-- <img class="menubar-img" src="https://www.svgrepo.com/show/509998/history.svg" alt="history icon"> Update<br>History -->
             </a>
         </li>
 
         <li> 
             <a href="/world-dynmaps/"> 
-                <img class="sidebar-img" src="/ui/road-map-and-pin.svg" alt="Dynmap Icon">
-                <!-- <img class="sidebar-img" src="https://www.svgrepo.com/show/92704/road-map-and-pin.svg" alt="Dynmap Icon"> -->
+                <img class="menubar-img" src="/ui/road-map-and-pin.svg" alt="Dynmap Icon">
+                <!-- <img class="menubar-img" src="https://www.svgrepo.com/show/92704/road-map-and-pin.svg" alt="Dynmap Icon"> -->
                 <center>World <br> Dynmaps </center>
             </a>
         </li>
         <li> 
             <a target="_blank" href="http://play.mcmeddon.com:8123/?worldname=Gelazkor&mapname=surface&zoom=1&x=2381&y=64&z=2500">
-                <img class="sidebar-img" src="/ui/map-location.svg"  alt="Dynmap Icon"> <center>SMP <br> Dynmap</center> 
-                <!-- <img class="sidebar-img" src="https://www.svgrepo.com/show/500616/map-location.svg"  alt="Dynmap Icon"> <center>SMP <br> Dynmap</center>  -->
+                <img class="menubar-img" src="/ui/map-location.svg"  alt="Dynmap Icon"> <center>SMP <br> Dynmap</center> 
+                <!-- <img class="menubar-img" src="https://www.svgrepo.com/show/500616/map-location.svg"  alt="Dynmap Icon"> <center>SMP <br> Dynmap</center>  -->
             </a>
         </li>
         <li><hr></li>      
         <li>            
-            <button type="button" style="font-size:10px;"class="btn btn-link" data-cc="c-settings">Manage <br>cookie <br>settings</button>
+            <button type="button" style="font-size:10px; color:black;"class="btn btn-link" data-cc="c-settings">Manage <br>cookie <br>settings</button>
         </li>
     </ul>
 </menu>
@@ -70,10 +79,10 @@ import McPing from '../components/McPing.astro'
 
 
 /*-----------------------*/
-.sidebar{    
+.menubar{    
     margin:0;
     padding:0;
-    max-width: var(--sidebar-max-width);
+    max-width: var(--menubar-max-width);
     /* max-width: 100%; */
     position: fixed;
     top: 0;
@@ -85,20 +94,18 @@ import McPing from '../components/McPing.astro'
     backdrop-filter: blur(7.9px);
     -webkit-backdrop-filter: blur(7.9px);
     border-right: 1px solid #222;
-
-    min-height: 100vh;
     height:100%;
     z-index: 999;
     /* border: 1px solid red; */
     padding:1em;
 }
-/*-----------------------*/
 
-.sidebar-img{
+
+.menubar-img{
     width: auto;
     height: auto;}
 /* removing random padding fix */
-.sidebar ul {
+.menubar ul {
     display: grid;
     grid-template-rows: 1fr 1fr;
     
@@ -106,7 +113,7 @@ import McPing from '../components/McPing.astro'
     padding: 0;
 }
 
-.sidebar ul > li {
+.menubar ul > li {
     margin:0;
     margin-top: 1vh;
     margin-bottom: 1vh;
@@ -117,11 +124,11 @@ import McPing from '../components/McPing.astro'
     padding-top: 5px;
     padding-bottom: 5px;
 }
-.sidebar ul > li > a {
+.menubar ul > li > a {
     grid-template-columns: auto;
     grid-template-rows: 1fr;
     width: 100%;
-    color:gray;
+    color:black;
     text-decoration:  none;   
     
     display: inline-flex;
@@ -130,19 +137,77 @@ import McPing from '../components/McPing.astro'
     
      /* border: 1px solid green; */
 }
-.sidebar ul > li:not(:first-child) {
-    filter: invert(.7);
+.menubar ul > li:not(:first-child) {
+    filter: invert(.9);
 }
 
-.sidebar-img {
+.menubar-img {
     height:40px;
     width:40px;
 }
 
 /* //add a transition to the hover  */
-.sidebar ul > li:hover:not(:first-child) {
+.menubar ul > li:hover:not(:first-child) {
     filter: invert(46%) sepia(88%) saturate(782%) hue-rotate(16deg) brightness(90%) contrast(101%);
     transition: 0.2s;
 }
+
+/*-----------------------*/
+@media (max-width: 768px) {
+    .menubar {
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        left: 0;
+        right: 0;
+        
+        height: auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        background: rgba(51, 51, 51, 0.8); /* Slightly more opaque for better visibility */
+        border-top: 1px solid #222;
+        padding: 0.5em 0; /* Reduce padding for a more compact layout */
+    }
+
+    .menubar ul {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        justify-content: space-around; /* Spread out the items evenly */
+    }
+
+    .menubar ul > li {
+        margin: 0;
+        list-style-type: none;
+        width: auto; /* Adjust width to fit horizontal layout */
+        padding: 0.5em; /* Increase padding for touch targets */
+    }
+
+    .menubar ul > li > a {
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: black; /* Change text color for better contrast on darker background */
+    }
+
+    .menubar-img {
+        height: 30px; /* Reduce icon size for better fit on mobile */
+        width: 30px;
+    }
+
+    /* Hover effects */
+    .menubar ul > li:hover:not(:first-child) {
+        filter: none; /* Reset filter on hover for mobile */
+        transition: 0.2s;
+    }
+}
+/*-----------------------*/
+
+
 
 </style>

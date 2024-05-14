@@ -4,78 +4,131 @@ import Herobanner from '../components/Herobanner.astro';
 /* import Card from '../components/Card.astro'; */
 import Herotext from '../components/Herotext.astro';
 import Herovideo from '../components/Herovideo.astro';
-/* import BBcode from '../components/bbcode.astro';
-import Instruction from '../components/Instruction.astro';
-import McPing from '../components/McPing.astro';
-import BGani from '../components/BG-animation.astro';
-import BGani2 from '../components/BG-animation2.astro'; */
+import Shelfitem from '../components/Shelfitem.astro';
 import AccordionFeatured from '../components/AccordionFeatured.astro';
+
+
+/* ------------------------------------------- */
+/* IMAGE to be imported  */
+/* Posts images to be imported  */
+import { Image, Picture } from "astro:assets";
+
+
+// Import posts
+const allPosts = await Astro.glob('../../src/pages/maps/**/**/*.md');
+
+// Shuffle posts
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+shuffleArray(allPosts);
+
+// Transform the post data
+const postsWithImagesv1 = await Promise.all(allPosts.map(async (post) => {
+    const coverImage = post.frontmatter.coverRelative
+      ? (await import(`/src/pages/maps${post.frontmatter.coverRelative}`)).default 
+      : null; // Get the default export from the module
+
+    return {
+      url: post.url,
+      title: post.frontmatter?.title || null,
+      coverImage: coverImage || null, // Store the imported image
+      alt: post.frontmatter?.alt || "Post image",
+    };
+}));
+
 export interface Props {
     title: string;
 }
-
 const { title } = Astro.props;
 ---
 
-<Layout title="Index">	
+<Layout title="Homepage">	
 	<main>		
 		<Herovideo
 			src="/videos/herovid_compli1.mp4">
 		</Herovideo>
-		<!----------------------------------->
+		<!---------------------------------
 		<Herotext
 		h1="Advanced Survival Friendly Vanilla Minecraft Landscapes"
-		p="Creating with passion, survival worlds for solo, coop and multiplayer server adventures for you to explore and enjoy">
+		p="">
+		</Herotext>-->
+		<div class="spacer60"></div>
+		<div class="introbannerdiv">
+			<Image 
+			class="introbanner" 
+			src={import(`../images/model.png`)} 
+			height={100}
+			
+			alt=""
+			loading="eager"
+			decoding="async"
+			/>
+			
+			</div>
+
+		<style>
+			.introbannerdiv{
+				z-index:9;
+				margin-top: 60vh;
+				display: grid;
+				justify-content: center;
+				align-items: center;
+			}
+			.introbanner{
+				display: grid;
+				justify-content: center;
+				align-items: center;
+				object-fit: contain;
+				
+			}
+		</style>
+
+		<h4>Featured</h4>
+		<div class="shelf">
+			<Shelfitem img ={import(`../pages/maps/2024/yekalyx/x3.jpg`)}  url="./maps/2023/akonlyx"></Shelfitem>
+			<Shelfitem img ={import(`../pages/maps/2024/vurotorm/x1.jpg`)}  url="./maps/2023/akonlyx"></Shelfitem>
+			<Shelfitem img ={import(`../pages/maps/2024/wokokor/x3.jpg`)}  url="./maps/2023/akonlyx"></Shelfitem>
+			<Shelfitem img ={import(`../pages/maps/2024/xedrimos/a.jpg`)}  url="./maps/2023/akonlyx"></Shelfitem>
+			<Shelfitem img ={import(`../pages/maps/2023/uramaxos/1.jpg`)}  url="./maps/2023/akonlyx"></Shelfitem>
+		</div>
 		<br>
-        <a href="https://www.patreon.com/mcmeddon" target="_blank"><button style="margin-top:.5em;"class="btn btn-primary">Become a Patreon</button></a>
-		<a href="/world-dynmaps/"><button style="margin-top:.5em;"class="btn btn-outline">Explore on Dynmap</button></a>
-		</Herotext>
-		
-
-		<AccordionFeatured></AccordionFeatured>
-		
-		<!-- <Herobanner class="hover"
-		 href="https://www.planetminecraft.com/project/kekaterra/"
-		 h2="Kekaterra, 8k World - With Highlands, Alpines and Waterfalls "
-		 img="/images/kekaterra/2.png"
-		 p=""
-		 /> -->
-		 <!-- 
-		<Herobanner class="hover"
-		 href="https://www.planetminecraft.com/project/jesankor/"
-		 h2="Jesankor, 7k- Waterfalls, Terraces and Cliffs "
-		 img="/images/jesankor/q.png"
-		 p="Adventure, explore, survive or create, at the most beautiful places in Minecraft and explore all the unique places and structures around the world."
-		 />
-
-		<Herobanner class="hover"
-		 href="https://www.planetminecraft.com/project/wullestor/"
-		 h2="Wullestor - 4k, The Island of Archipels "
-		 img="/images/wullestor/L.png"
-		 p="Adventure, explore, survive or create, at the most beautiful places in Minecraft and explore all the unique places and structures around the world."
-		 />
-
-		<Herobanner class="hover"
-		 href="https://www.planetminecraft.com/project/Gelazkor/"
-		 h2="Gelazkor - 5k, Plateaus and Lands of the Flowers "
-		 img="/images/gelazkor/gelazkor1b.png"
-		 p="Adventure, explore, survive or create, at the most beautiful places in Minecraft and explore all the unique places and structures around the world."
-		 />
+		<h4>Featured Starter Worlds</h4>			
 	
-		<Herobanner class="hover"
-		 href="https://www.planetminecraft.com/project/Zarbokos/"
-		 h2="Zarbokos- 4k, Alpine Island "
-		 img="/images/zarbokos/D.png"
-		 p="Adventure, explore, survive or create, at the most beautiful places in Minecraft and explore all the unique places and structures around the world."
-		 /> -->
+		<div class="shelf">
+			{postsWithImagesv1.map((post) => (
+			<div>
+				<a key={post.url} href={post.url}>
+				{post.coverImage ? ( 
+				  <Shelfitem
+					img={post.coverImage} // Resolve the import promise
+					url={post.url}
+					alt=""
+					loading="lazy"
+					width="0"
+					height="250"
+					aspectRatio="16/9"
+					formats={["avif"]}
+				  />
+				  <p>{post.title}</p> 
+				) : (
+				  <p>oop Image not found</p> 
+				  <img src="./fallbackimage"/>
+				)}
+			  </a>
+			</div>
+			  
+			))}
+		  </div>
 	</main>
 </Layout>
 
 <style>
 
-/* ---------------------------------------------- */
-
-
+/*---------------------------------------------- */
 
 	wrapper, .wrapper{ 
 	max-width: 100% !important;
@@ -120,4 +173,24 @@ const { title } = Astro.props;
 
 
 /* ---------------------------------------------- */
+
+.shelf{
+	max-width: calc(100%-10em)80%;
+	display: grid;
+  	grid-template-rows: 1fr;
+  	/* grid-template-columns: repeat(5, 1fr); */
+	grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+	
+	gap:0;
+	justify-content: center;
+	align-items: center;
+	
+	
+}
+
+#nextButton {
+  /* Style the next button as needed, e.g. add a chevron icon */
+}
+
 </style>
+

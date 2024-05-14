@@ -7,7 +7,7 @@ export interface Props {
 }
 
 const { img, h2, href, p } = Astro.props;
-import { Image, Picture } from "@astrojs/image/components";
+import { Image, Picture } from "astro:assets";
 ---
 
 <div class="wrapper">
@@ -75,6 +75,7 @@ a {
         margin-top:-1em;
         z-index: 2;
         }
+
     .heroimage {
         
         object-fit:cover;
@@ -83,12 +84,8 @@ a {
         z-index: 1;
         filter: brightness(100%);
         aspect-ratio: 4/2;
-        max-height: 35em;
-        
-    }
-    
-	.heroimage {		
-		list-style: none;
+        max-height: 35em;	
+        list-style: none;
 		padding: 0.25rem;
 		background-color: #222;
 		background-image: none;
@@ -96,6 +93,10 @@ a {
 		border-radius: 25px;
 		background-position: 100%;
 		transition: background-position 1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    
+	.heroimage {		
+	
 		
 	}
 	

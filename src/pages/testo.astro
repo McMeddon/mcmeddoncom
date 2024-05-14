@@ -4,7 +4,88 @@ import Layout from '../layouts/Layout.astro';
 import Herotext from '../components/Herotext.astro';
 import AccordionFeatured from '../components/AccordionFeatured.astro';
 ---
-<Layout>
+
+
+
+<placeholder></placeholder>
+<div class="fullbannercontainer">
+    <section class="scrollchild  ">
+        <div class="overlay">
+            <video class="image video" src="/videos/herovid_compli1.mp4" alt="hero" autoplay muted loop preload="none" loading="lazy"/>
+        </div>
+        <!-- <video class="image" src="../../public/videos/herovidmcs7.mp4" alt="hero" autoplay muted loop preload="none" loading="lazy"/> -->
+        <!-- <img class="himage" src="../images/gelazkor/gelazkoro.png" alt="hero" /> -->
+        <div class="components">
+            <placeholder></placeholder>
+            
+            <div>
+                <h2 class="black text-gradient">Advanced Survival Friendly <br>Vanilla Minecraft Landscapes</h2>
+                <hr style="width:50%;">
+                <p>Creating with passion, survival worlds for solo, coop and multiplayer 
+                    <br>server adventures for you to explore and enjoy</p>
+                <button class="btn btn-white">Explore in 3D</button>
+                <button class="btn btn-dark">View all Features</button>
+                <button class="btn btn-outline">Become Patreon</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="scrollchild  overlay">
+        <!-- <video class="image" src="/videos/herovid_zarbokos1.mp4" alt="hero" autoplay muted loop preload="none" loading="lazy"/> -->
+        <!-- <video class="image" src="../../public/videos/herovidmcs7.mp4" alt="hero" autoplay muted loop preload="none" loading="lazy"/> -->
+        <div class="overlay">
+            <img class="image" src="../images/kekaterra/1.png" alt="hero" />
+        </div>
+        <div class="components">
+            
+            <div>
+                <h2 class="black text-gradient ">Super Sized Minecraft Worlds</h2>
+                <hr style="width:50%;">
+                <p> Travel beyond stunning landscapes and settle beneath astonoshing mountains, 
+                    <br>find dynamic planes, forest and complex worlds to conquer</p>
+                <button class="btn btn-primary">View all features</button>
+                <button class="btn btn-secondary">Explore on pmc</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="scrollchild  ">
+        <div class="overlay">
+            <video class="image video" src="/videos/herovid_zarbokos1.mp4" alt="hero" autoplay muted loop preload="none" loading="lazy"/>
+        </div>
+        <!-- <video class="image" src="../../public/videos/herovidmcs7.mp4" alt="hero" autoplay muted loop preload="none" loading="lazy"/> -->
+        <!-- <img class="himage" src="../images/gelazkor/gelazkoro.png" alt="hero" /> -->
+        <div class="components">
+           
+            <div>
+                <h2 class="black text-gradient">Single Player Worlds</h2>
+                <hr style="width:50%;">
+                <p> Explore huge worlds with unique new features, <br> and landscapes for your next adventure</p>
+                <button class="btn btn-primary">View all features</button>
+                <button class="btn btn-secondary">Explore on pmc</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="scrollchild  overlay">
+        <!-- <video class="image" src="/videos/herovid_zarbokos1.mp4" alt="hero" autoplay muted loop preload="none" loading="lazy"/> -->
+        <!-- <video class="image" src="../../public/videos/herovidmcs7.mp4" alt="hero" autoplay muted loop preload="none" loading="lazy"/> -->
+        <img class="image" src="/images/yorotorm/2.png" alt="hero" />
+        <div class="components">
+            
+            <div>
+                <h2 class="black text-gradient">Community & Server Worlds</h2>
+                <hr style="width:50%;">
+                <p> Explore a gigantic creative world for your adventures! </p>
+                <button class="btn btn-primary">See on PMC</button>
+                <button class="btn btn-secondary">Explore on pmc</button>
+            </div>
+            
+        </div>
+    </section>
+</div>
+<Layout class="">
+    
 
         <Herotext
         h1="UI Components overview"
@@ -26,7 +107,7 @@ import AccordionFeatured from '../components/AccordionFeatured.astro';
     <hr>
 
 <h2> Overview Buttons</h2>
-<div class="d-flex gap-2 justify-content-center py-5">
+<div class="d-flex gap-2 justify-content-center py-5 scrollchild">
     <button class="btn btn-primary pilled" type="button">Primary</button>
     <button class="btn btn-secondary pilled " type="button">Secondary</button>
     <button class="btn btn-success pilled " type="button">Success</button>
@@ -168,4 +249,90 @@ import AccordionFeatured from '../components/AccordionFeatured.astro';
         </p>
     </footer>
 </wrapper>
-</Layout>
+
+
+</Layout> 
+
+<style>
+    .fullbannercontainer{   
+        position: relative;     
+        top: 0;
+        right: 0;
+        height: max-content;    
+         
+
+    }
+
+    .scrollchild{ 
+        scroll-snap-align: start;
+        scroll-snap-stop: normal;
+    }
+
+    .scrollchild{
+        position:relative;
+        height: 100vh; 
+    }
+    @media screen and (max-width: 600px) {
+        .fullbannercontainer{
+            height: 100vh; 
+            height: max-content;   
+            
+            min-width: 100%;
+        }
+    }
+
+  .image {
+    object-fit: cover;
+    width: 100%; 
+    min-height:100%;
+    min-height:100vh;
+}
+
+p{ 
+    color:white;
+}
+    .video {
+            opacity: 1;
+            padding-left:-1px;
+            margin:0;
+            
+    }
+    
+    .overlay{
+        display:block;
+    }
+    .overlay:after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width:100%;
+    padding:0;
+    margin:0;
+    
+    display: inline-block;
+    background: linear-gradient(0deg, rgba(29, 29, 39, 0.9) 10%, rgba(255,255,255,0) 50%, rgba(246,246,246,0) 90%, rgba(0,0,0,0) 100%);
+    z-index: 1;
+    }
+
+
+  .components{  
+    position: absolute;
+    bottom: 0;
+    margin:auto;
+    
+    width: 100%;
+    height: 100%;
+    padding-bottom: 3em;
+    
+    display: grid;
+    grid-template-rows: minmax(1fr, 2fr);
+    align-items: flex-end;
+    text-align: center;
+    justify-content: baseline;
+
+    z-index: 10;
+    
+}
+</style>

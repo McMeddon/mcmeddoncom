@@ -1,13 +1,20 @@
 ---
+import { Image } from "astro:assets";
+
 const { title, link, icon,target } = Astro.props;
 ---
 <div class="fullpill">
     <div class="pill"> 
-        <a icon href={link} target={target} > 
-            <img src={icon} alt="pill icon"/>
+        <a icon href={link} target={target}"> 
+            <img 
+			src={icon} 
+			alt="pill icon" 
+			loading="lazy"
+			decoding="async"
+			
+			/>
             <h2>
-                {title}
-                
+                {title}                
             </h2>
 			<slot></slot>
         </a>

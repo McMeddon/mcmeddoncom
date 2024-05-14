@@ -1,0 +1,72 @@
+---
+import { Image, Picture } from "astro:assets";
+export interface Props {
+	image: string;
+	video: string;
+	
+}
+
+const {url} = Astro.props;
+const {img} = Astro.props;
+const {video} = Astro.props;
+const {post} = Astro.props;
+---
+<div class="preview-container">
+	<a href={url} target="">
+	
+			<Picture 
+			width={0}
+			height={380}
+			class="shelfi preview-image"
+			src={img} 
+			quality={50}
+			format={"avif"}
+			alt=""
+			loading="lazy" 
+			  />
+			</a>
+		</div>
+
+<style>
+.preview-container {
+	position: relative;
+	aspect-ratio: 16 / 9 ;
+  max-height: 100%;
+  object-fit:contain;
+  
+	
+}
+
+.shelfi, .preview-video {
+  position: relative;
+  border-radius: 20px;
+  box-sizing: border-box;
+  border: 4px solid transparent;
+  padding: 5px;
+  aspect-ratio: 16 / 10 ;
+  object-fit:cover;
+  height: fit-content;
+  
+  
+  
+}
+
+
+
+.preview-video{
+	position: absolute;
+}
+
+.shelfi:hover {
+  border: 4px solid white;
+   transform: scale(1.1);
+  z-index: 99;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 2s;
+  box-shadow: rgba(0, 0, 0, 0.65) 0px 54px 55px, rgba(0, 0, 0, 0.62) 0px -12px 30px, rgba(0, 0, 0, 0.62) 0px 4px 6px, rgba(0, 0, 0, 0.67) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.preview-container:hover .preview-video:hover {
+  display: block;
+}
+</style>
+

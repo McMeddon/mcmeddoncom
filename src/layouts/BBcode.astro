@@ -1,6 +1,4 @@
 ---
-
-import Layout from './Maps.astro';
 import BBcode from '../components/BBcode.astro';
     const {frontmatter} = Astro.props;
     /* const {title, description, date, image, tags} = frontmatter; */
@@ -9,7 +7,7 @@ import BBcode from '../components/BBcode.astro';
 
     const {title, img, src, p, body } = Astro.props;
 ---
-<Layout title={title}>
+<div title={title}>
     <astro>
         <bbcode id="BBcode"> 
            <!-- Test
@@ -64,5 +62,5 @@ import BBcode from '../components/BBcode.astro';
         </script>
     </astro>
 
-</Layout>
+</div>
 

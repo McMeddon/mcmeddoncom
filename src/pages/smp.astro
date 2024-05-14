@@ -16,7 +16,8 @@ export interface Props {
 }
 
 const { title } = Astro.props;
-import { Image, Picture } from "@astrojs/image/components";
+import { Image, Picture } from "astro:assets";
+import smpS4P1 from '../pages/maps/2023/smpS4/0.jpg'
 ---
 
 <Layout title="McMeddons Community Server">	
@@ -25,7 +26,28 @@ import { Image, Picture } from "@astrojs/image/components";
     src="/videos/herovidmcs7.mp4">
 </Herovideo>
 
-    <Herotext
+<div class="introbannerdiv"><img class="introbanner" src="../src/images/minecraft_title.png" alt=""></div>
+		
+<style>
+    .introbannerdiv{
+        margin-top: 55vh;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+    .introbanner{
+        
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        max-width: 700px;
+        
+    }
+</style>
+
+
+
+    <!-- <Herotext
        h1="McMeddons Community Server, the Creative Coop Survival Adventure SMP"
        p="Play together on McMeddons latest custom survival worlds. Where you can explore and adventure through the most stunning landscapes and biomes. Build your dream base, make friends and enjoy Minecraft like never before."
        p2=""
@@ -40,7 +62,7 @@ import { Image, Picture } from "@astrojs/image/components";
        <br><br>
        
        <button class="btn btn-link" ><a href="https://www.planetminecraft.com/server/play-mcmeddon-com/" target="_blank">All details</a></button>
-    </Herotext>
+    </Herotext> -->
     
     <content>
         <div class="">
@@ -86,48 +108,52 @@ import { Image, Picture } from "@astrojs/image/components";
         </Instruction>
     </section>
     <section class="split4">
-        <Picture class="heroimage" alt="banner image" loading="lazy"
-        widths={[400, 1200]}
-        aspectRatio={1/1}
+        <script></script>
+        <Picture 
+        class="heroimage" 
+        alt="banner image" 
+        loading="lazy"
+        widths={0}
+        height={540}
         quality={50}
         format={"avif"}
-        src="/images/smp/s4/17.png" />
+        src={smpS4P1} />
 
-        <Picture class="heroimage" alt="banner image" loading="lazy"
+       <!--  <Picture class="heroimage" alt="banner image" loading="lazy"
         widths={[400, 1200 ]}
         aspectRatio={1/1}
         quality={50}
         format={"avif"}
         src="/images/gelazkor/gelazkor1b.png" />
-
-        <Picture class="heroimage" alt="banner image" loading="lazy"
+ -->
+<!--         <Picture class="heroimage" alt="banner image" loading="lazy"
         widths={[400, 1200]}
         aspectRatio={1/1}
         quality={50}
         format={"avif"}
-        src="/images/gelazkor/gelazkoro.png" />
+        src="/images/gelazkor/gelazkoro.png" /> -->
 
-        <Picture class="heroimage" alt="banner image" loading="lazy"
+<!--         <Picture class="heroimage" alt="banner image" loading="lazy"
         widths={[400, 1200]}
         aspectRatio={1/1}
         quality={50}
         format={"avif"}
-        src="/images/smp/s4/23.png" />
+        src="/images/smp/s4/23.png" /> -->
     </section>
-    <Picture class="heroimage" alt="banner image" loading="lazy"
+<!--     <Picture class="heroimage" alt="banner image" loading="lazy"
     widths={[400, 1200]}
     aspectRatio={3/1}
     quality={50}
     format={"avif"}
-    src="/images/smp/s4/2.png" />
+    src="/images/smp/s4/2.png" /> -->
 
         <section class="split2">
-            <Picture class="heroimage" alt="banner image" loading="lazy"
+            <!-- <Picture class="heroimage" alt="banner image" loading="lazy"
             widths={[400, 1200]}
             aspectRatio={1/1}
             quality={50}
             format={"avif"}
-            src="/images/smp/s4/4.png" />
+            src="/images/smp/s4/4.png" /> -->
 
             
             <div>
@@ -139,31 +165,31 @@ import { Image, Picture } from "@astrojs/image/components";
    
 
     <section class="split2">
-        <Picture class="heroimage" alt="banner image" loading="lazy"
+        <!-- <Picture class="heroimage" alt="banner image" loading="lazy"
         widths={[400, 1200]}
         aspectRatio={1/1}
         quality={50}
         format={"avif"}
-        src="/images/smp/s4/7.png" />
+        src="/images/smp/s4/7.png" /> -->
 
-        <Picture class="heroimage" alt="banner image" loading="lazy"
+        <!-- <Picture class="heroimage" alt="banner image" loading="lazy"
         widths={[400, 1200]}
         aspectRatio={1/1}
         quality={50}
         format={"avif"}
-        src="/images/smp/s4/6.png" />
+        src="/images/smp/s4/6.png" /> -->
     
     </section>
 
-    <Picture class="heroimage" alt="banner image" loading="lazy"
+    <!-- <Picture class="heroimage" alt="banner image" loading="lazy"
     widths={[400, 1200]}
     aspectRatio={3/1}
     quality={50}
     format={"avif"}
-    src="/images/smp/s4/3.png" />
+    src="/images/smp/s4/3.png" /> -->
 
     <section class="split2">
-        <Picture class="heroimage" alt="banner image" loading="lazy"
+       <!--  <Picture class="heroimage" alt="banner image" loading="lazy"
         widths={[400, 1200]}
         aspectRatio={1/1}
         quality={50}
@@ -175,15 +201,15 @@ import { Image, Picture } from "@astrojs/image/components";
         aspectRatio={1/1}
         quality={50}
         format={"avif"}
-        src="/images/smp/s4/13.png" />
+        src="/images/smp/s4/13.png" /> -->
     
     </section>
-    <Picture class="heroimage" alt="banner image" loading="lazy"
+   <!--  <Picture class="heroimage" alt="banner image" loading="lazy"
     widths={[400, 1200]}
     aspectRatio={3/1}
     quality={50}
     format={"avif"}
-    src="/images/smp/s4/14.png" />
+    src="/images/smp/s4/14.png" /> -->
 <hr>
 
     <section class="split2">
@@ -194,41 +220,41 @@ import { Image, Picture } from "@astrojs/image/components";
 
             </div>
 
-            <Picture class="heroimage" alt="banner image" loading="lazy"
+           <!--  <Picture class="heroimage" alt="banner image" loading="lazy"
             widths={[400, 1200]}
             aspectRatio={1/1}
             quality={50}
             format={"avif"}
-            src="/images/gelazkor/gelazkoro.png" />
+            src="/images/gelazkor/gelazkoro.png" /> -->
         </section>
         <section class="split4">
-            <Picture class="heroimage" alt="banner image" loading="lazy"
+           <!--  <Picture class="heroimage" alt="banner image" loading="lazy"
             widths={[400, 1200]}
             aspectRatio={1/1}
             quality={50}
             format={"avif"}
-            src="/images/smp/s4/15.png" />
+            src="/images/smp/s4/15.png" /> -->
     
-            <Picture class="heroimage" alt="banner image" loading="lazy"
+            <!-- <Picture class="heroimage" alt="banner image" loading="lazy"
             widths={[400, 1200]}
             aspectRatio={1/1}
             quality={50}
             format={"avif"}
             src="/images/smp/s4/10.png" />
-
-            <Picture class="heroimage" alt="banner image" loading="lazy"
+ -->
+            <!-- <Picture class="heroimage" alt="banner image" loading="lazy"
             widths={[400, 1200]}
             aspectRatio={1/1}
             quality={50}
             format={"avif"}
-            src="/images/smp/s4/18.png" />
+            src="/images/smp/s4/18.png" /> -->
     
-            <Picture class="heroimage" alt="banner image" loading="lazy"
+            <!-- <Picture class="heroimage" alt="banner image" loading="lazy"
             widths={[400, 1200]}
             aspectRatio={1/1}
             quality={50}
             format={"avif"}
-            src="/images/smp/s4/19.png" />
+            src="/images/smp/s4/19.png" /> -->
         
         </section>
 <!--         <Picture class="heroimage" alt="banner image"

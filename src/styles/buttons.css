@@ -32,6 +32,7 @@
 
 }
 .btn-success   { background-color:limegreen;  color:white;}
+.btn-pmc       { background-color: #36c;  color:white;}
 .btn-danger    { background-color:rgb(158, 0, 0); color:white;}
 .btn-warning   { background-color:darkorange;}
 .btn-info      { background: rgba(var(--accent), 5%); color: rgb(var(--accent));}

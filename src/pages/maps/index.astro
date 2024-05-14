@@ -1,16 +1,19 @@
 ---
-import Layout from '../../layouts/Layout.astro'
+import Layout from '../../layouts/Layout.astro';
 import Card from '../../components/Card.astro';
-/* import Herobanner from '../../components/herobanner.astro';
-import BBcode from '../components/bbcode.astro';
-import Instruction from '../components/Instruction.astro'; */
+import { Image, Picture } from 'astro:assets';
 
-const pages = import.meta.glob('/src/pages/maps/**/*.{astro,md}');
-let links = [];
-for (const path in pages) {
-  const url = path.replace(/^\/src\/pages\/maps\//, '').replace(/\.(astro|md)$/, '');
-  links.push({url});
-}
+const allPosts = await Astro.glob('../maps/2023/**/*.md');
+
+const frontmatter= allPosts;
+const pageTitle = "Minecraft Worlds List";
+
+/* ---experimental img load dynamic */
+/* import coverimage from 'frontmatter.cover.src'; */
+
+/* console.log(frontmatter.cover.src); */
+
+
 ---
 
 
@@ -25,19 +28,57 @@ for (const path in pages) {
 				<br><br>Loot ships, balloons, and conquer dungeons. Build a house on Volcanos, or within huge mountains or survive along the rivers and the woods. Find custom caves, mineshafts, coral reefs, advanced biomes, supporter villages, and more.
 				 </p>	
 		</section>
-		<maps> <!-- //display all maps in a list of the folder /maps/  -->
+		<!-- //display all maps in a list of the folder /maps/  -->
+			<!-- {allPosts.map((post) => <li class="posttitles"> <a  href={post.url}> {post.frontmatter.title}</a> </li>)} -->
+			
+
+			<!-- ----------------------------------------------------------- -->
+			<!-- Working------------------------ -->
+			const allPosts = await Astro.glob('../maps/2023/**/*.md');
+			<!-- ----------------------------------------------------------- -->
+
 			<ul>
-				{links.map(link => (
-					<li><a class="maplinks" href={link.url}>{link.url}</a></li>
-				  ))}
+				{allPosts.map((post) => 
+					<li class="posttitles">
+						<a href={post.url}>
+							{post.frontmatter.title}
+							{/* <Image src={import(`${coverimage}`)}  alt="image" />  */}
+						</a>
+					</li>)}
 			</ul>
+
+			<!-- ----------------------------------------------------------- -->
+			<!-- <ul>
+				{allPosts.map((post) => <li class="posttitles"><a href={post.url}><img src={post.frontmatter.cover} alt={post.frontmatter.imagealt}></a></li>)}
+			</ul>
+			 -->
+		
+		<maps> 
+<ul>
+</ul>
 		</maps>
 	</mapsindexlayout>
 </Layout>
 <style>
+
+
+.posttitles {
+	list-style: none;
+	padding:10px;
+}
+
+.posttitles a{
+	color:white;
+	text-decoration: none;
+	font-size:x-large;
+	width:100%;
+	background-color: #222;
+}
+.posttitles a:hover{ color:green;}
+/* --------------------------------- */
 	mapsindexlayout {
 		display:grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr 2fr;
 		}
 		
 		.container {

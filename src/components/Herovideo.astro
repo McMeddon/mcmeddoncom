@@ -3,12 +3,12 @@ export interface Props {
 	src: string;
 }
 
-const {src} = Astro.props;
+const {src} = await Astro.props;
 ---
 
 
 <div class="videowrapper">
-	<video class="videohero"autoplay muted loop preload="none" loading="lazy">
+	<video class="videohero"autoplay muted loop preload="none" loading="lazy" decoding="async">
    <source src={src} type="video/mp4">
    Your browser does not support the video tag.
 </video>
@@ -28,9 +28,9 @@ const {src} = Astro.props;
 .videohero{
 	width:100%;
 	object-fit: cover;
-	height:73vh;
+	height:83vh;
 	
 	filter: blur(2px);
-	opacity: .5;
+	opacity: .7;
 }
 </style>
