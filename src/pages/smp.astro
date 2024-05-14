@@ -10,10 +10,34 @@ export interface Props {
 const { title } = Astro.props;
 import { Image, Picture } from "astro:assets";
 import smpS4P1 from '../pages/maps/2023/smpS4/0.jpg'
+import Shelfitem from '../components/Shelfitem.astro';
 
 
 /* ------------------------- */
+const allPosts = await Astro.glob('../../src/pages/maps/**/**/*.md');
 
+// Shuffle posts
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+shuffleArray(allPosts);
+
+// Transform the post data
+const postsWithImagesv1 = await Promise.all(allPosts.map(async (post) => {
+    const coverImage = post.frontmatter.coverRelative
+      ? (await import(`/src/pages/maps${post.frontmatter.coverRelative}`)).default 
+      : null; // Get the default export from the module
+
+    return {
+      url: post.url,
+      title: post.frontmatter?.title || null,
+      coverImage: coverImage || null, // Store the imported image
+      alt: post.frontmatter?.alt || "Post image",
+    };
+}));
 
 
 ---
@@ -79,7 +103,9 @@ import smpS4P1 from '../pages/maps/2023/smpS4/0.jpg'
             <button class="btn btn-secondary" >  <a href="#">Season 1</a></button>
             <button class="btn btn-secondary" ><a href=#">Season 2</a></button>
             <button class="btn btn-secondary" ><a href="#">Season 3</a></button>
-            <button class="btn btn-light" ><a href="#">Season 4</a></button>
+            <button class="btn btn-secondary" ><a href="#">Season 4</a></button>
+            <button class="btn btn-secondary" ><a href="#">Season 5</a></button>
+            <button class="btn btn-light" ><a href="#">Season 6</a></button>
         </div>
         <section class="split2">
             <section class="split2">
@@ -117,52 +143,71 @@ import smpS4P1 from '../pages/maps/2023/smpS4/0.jpg'
     </section>
     <section class="split4">
         <script></script>
-        <Picture 
-        class="heroimage" 
-        alt="banner image" 
+        <Shelfitem img ={import(`../pages/maps/2023/smpS4/0.jpg`)} ></Shelfitem>
+        <Shelfitem img ={import(`../pages/maps/2023/smpS4/1.jpg`)} ></Shelfitem>
+        <Shelfitem img ={import(`../pages/maps/2023/smpS4/2.jpg`)} ></Shelfitem>
+        <Shelfitem img ={import(`../pages/maps/2023/smpS4/3.jpg`)} ></Shelfitem>
+        
+
+        <Picture class="heroimage" alt="banner image" loading="lazy"
+        src={import(`../pages/maps/2023/smpS4/4.jpg`)} 
+        alt="Dynamic Image" 
+        class="coverArt"
+        quality={50}
+        height={500}
+        format="webp"
         loading="lazy"
-        widths={0}
-        height={540}
-        quality={50}
-        format={"avif"}
-        src={smpS4P1} />
+        decoding="async" />
 
-       <!--  <Picture class="heroimage" alt="banner image" loading="lazy"
-        widths={[400, 1200 ]}
-        aspectRatio={1/1}
+        <Picture class="heroimage" alt="banner image" loading="lazy"
+        src={import(`../pages/maps/2023/smpS4/5.jpg`)} 
+        alt="Dynamic Image" 
+        class="coverArt"
         quality={50}
-        format={"avif"}
-        src="/images/gelazkor/gelazkor1b.png" />
- -->
-<!--         <Picture class="heroimage" alt="banner image" loading="lazy"
-        widths={[400, 1200]}
-        aspectRatio={1/1}
-        quality={50}
-        format={"avif"}
-        src="/images/gelazkor/gelazkoro.png" /> -->
+        height={500}
+        format="webp"
+        loading="lazy"
+        decoding="async"/>
 
-<!--         <Picture class="heroimage" alt="banner image" loading="lazy"
-        widths={[400, 1200]}
-        aspectRatio={1/1}
+        <Picture class="heroimage" alt="banner image" loading="lazy"
+        src={import(`../pages/maps/2023/smpS4/6.jpg`)} 
+        alt="Dynamic Image" 
+        class="coverArt"
         quality={50}
-        format={"avif"}
-        src="/images/smp/s4/23.png" /> -->
+        height={500}
+        format="webp"
+        loading="lazy"
+        decoding="async"/>
+
+        <Picture class="heroimage" alt="banner image" loading="lazy"
+        src={import(`../pages/maps/2023/smpS4/21.jpg`)} 
+        alt="Dynamic Image" 
+        class="coverArt"
+        quality={50}
+        height={500}
+        format="webp"
+        loading="lazy"
+        decoding="async"/>
     </section>
-<!--     <Picture class="heroimage" alt="banner image" loading="lazy"
-    widths={[400, 1200]}
-    aspectRatio={3/1}
-    quality={50}
-    format={"avif"}
-    src="/images/smp/s4/2.png" /> -->
+
+    <Picture class="heroimage" alt="banner image" loading="lazy"
+
+                src={import(`../pages/maps/2023/smpS4/7.jpg`)} 
+                alt="Dynamic Image" 
+                class="coverArt"
+                quality={50}
+                format="webp"
+                loading="lazy"
+                decoding="async"
+                 />
 
         <section class="split2">
-            <!-- <Picture class="heroimage" alt="banner image" loading="lazy"
-            widths={[400, 1200]}
+            <Picture class="heroimage" alt="banner image" loading="lazy"
+            width={0}
             aspectRatio={1/1}
             quality={50}
             format={"avif"}
-            src="/images/smp/s4/4.png" /> -->
-
+            src={import(`../pages/maps/2023/smpS4/8.jpg`)}/>
             
             <div>
                 <h2><i>A communtiy for explorers, <br>builders and kind people!</i></h2>
@@ -173,51 +218,63 @@ import smpS4P1 from '../pages/maps/2023/smpS4/0.jpg'
    
 
     <section class="split2">
-        <!-- <Picture class="heroimage" alt="banner image" loading="lazy"
-        widths={[400, 1200]}
-        aspectRatio={1/1}
+        <Picture class="heroimage" alt="banner image" loading="lazy"
+        src={import(`../pages/maps/2023/smpS4/9.jpg`)} 
+        alt="Dynamic Image" 
+        class="coverArt"
         quality={50}
-        format={"avif"}
-        src="/images/smp/s4/7.png" /> -->
-
-        <!-- <Picture class="heroimage" alt="banner image" loading="lazy"
-        widths={[400, 1200]}
-        aspectRatio={1/1}
-        quality={50}
-        format={"avif"}
-        src="/images/smp/s4/6.png" /> -->
-    
-    </section>
-
-    <!-- <Picture class="heroimage" alt="banner image" loading="lazy"
-    widths={[400, 1200]}
-    aspectRatio={3/1}
-    quality={50}
-    format={"avif"}
-    src="/images/smp/s4/3.png" /> -->
-
-    <section class="split2">
-       <!--  <Picture class="heroimage" alt="banner image" loading="lazy"
-        widths={[400, 1200]}
-        aspectRatio={1/1}
-        quality={50}
-        format={"avif"}
-        src="/images/smp/s4/9.png" />
+        format="webp"
+        loading="lazy"
+        decoding="async" />
 
         <Picture class="heroimage" alt="banner image" loading="lazy"
-        widths={[400, 1200]}
-        aspectRatio={1/1}
+        src={import(`../pages/maps/2023/smpS4/10.jpg`)} 
+        alt="Dynamic Image" 
+        class="coverArt"
         quality={50}
-        format={"avif"}
-        src="/images/smp/s4/13.png" /> -->
+        format="webp"
+        loading="lazy"
+        decoding="async" />
     
     </section>
-   <!--  <Picture class="heroimage" alt="banner image" loading="lazy"
-    widths={[400, 1200]}
-    aspectRatio={3/1}
+
+    <Picture class="heroimage" alt="banner image" loading="lazy"
+    src={import(`../pages/maps/2023/smpS4/11.jpg`)} 
+    alt="Dynamic Image" 
+    class="coverArt"
     quality={50}
-    format={"avif"}
-    src="/images/smp/s4/14.png" /> -->
+    format="webp"
+    loading="lazy"
+    decoding="async" />
+
+    <section class="split2">
+        <Picture class="heroimage" alt="banner image" loading="lazy"
+        src={import(`../pages/maps/2023/smpS4/12.jpg`)} 
+        alt="Dynamic Image" 
+        class="coverArt"
+        quality={50}
+        format="webp"
+        loading="lazy"
+        decoding="async" />
+
+        <Picture class="heroimage" alt="banner image" loading="lazy"
+        src={import(`../pages/maps/2023/smpS4/13.jpg`)} 
+        alt="Dynamic Image" 
+        class="coverArt"
+        quality={50}
+        format="webp"
+        loading="lazy"
+        decoding="async" />
+    
+    </section>
+    <Picture class="heroimage" alt="banner image" loading="lazy"
+    src={import(`../pages/maps/2023/smpS4/14.jpg`)} 
+    alt="Dynamic Image" 
+    class="coverArt"
+    quality={50}
+    format="webp"
+    loading="lazy"
+    decoding="async" />
 <hr>
 
     <section class="split2">
@@ -228,49 +285,66 @@ import smpS4P1 from '../pages/maps/2023/smpS4/0.jpg'
 
             </div>
 
-           <!--  <Picture class="heroimage" alt="banner image" loading="lazy"
-            widths={[400, 1200]}
-            aspectRatio={1/1}
-            quality={50}
-            format={"avif"}
-            src="/images/gelazkor/gelazkoro.png" /> -->
+           <Picture class="heroimage" alt="banner image" loading="lazy"
+           src={import(`../pages/maps/2023/smpS4/15.jpg`)} 
+           alt="Dynamic Image" 
+           class="coverArt"
+           quality={50}
+           format="webp"
+           loading="lazy"
+           decoding="async" /> 
         </section>
+
         <section class="split4">
-           <!--  <Picture class="heroimage" alt="banner image" loading="lazy"
-            widths={[400, 1200]}
-            aspectRatio={1/1}
+            <Picture class="heroimage" alt="banner image" loading="lazy"
+            src={import(`../pages/maps/2023/smpS4/16.jpg`)} 
+            alt="Dynamic Image" 
+            class="coverArt"
             quality={50}
-            format={"avif"}
-            src="/images/smp/s4/15.png" /> -->
+            height={400}
+            format="webp"
+            loading="lazy"
+            decoding="async" />
     
-            <!-- <Picture class="heroimage" alt="banner image" loading="lazy"
-            widths={[400, 1200]}
-            aspectRatio={1/1}
-            quality={50}
-            format={"avif"}
-            src="/images/smp/s4/10.png" />
- -->
-            <!-- <Picture class="heroimage" alt="banner image" loading="lazy"
-            widths={[400, 1200]}
-            aspectRatio={1/1}
-            quality={50}
-            format={"avif"}
-            src="/images/smp/s4/18.png" /> -->
+             <Picture class="heroimage" alt="banner image" loading="lazy"
+                src={import(`../pages/maps/2023/smpS4/17.jpg`)} 
+                alt="Dynamic Image" 
+                class="coverArt"
+                quality={50}
+                height={400}
+                format="webp"
+                loading="lazy"
+                decoding="async" />
+
+             <Picture class="heroimage" alt="banner image" loading="lazy"
+             src={import(`../pages/maps/2023/smpS4/18.jpg`)} 
+             alt="Dynamic Image" 
+             class="coverArt"
+             quality={50}
+             height={400}
+             format="webp"
+             loading="lazy"
+             decoding="async" />
     
-            <!-- <Picture class="heroimage" alt="banner image" loading="lazy"
-            widths={[400, 1200]}
-            aspectRatio={1/1}
+            <Picture class="heroimage" alt="banner image" loading="lazy"
+            src={import(`../pages/maps/2023/smpS4/19.jpg`)} 
+            alt="Dynamic Image" 
+            class="coverArt"
             quality={50}
-            format={"avif"}
-            src="/images/smp/s4/19.png" /> -->
+            height={400}
+            format="webp"
+            loading="lazy"
+            decoding="async" /> 
         
         </section>
-<!--         <Picture class="heroimage" alt="banner image"
-        widths={[400, 1200]}
-        aspectRatio={3/1}
+        <Picture class="heroimage" alt="banner image"
+        src={import(`../pages/maps/2023/smpS4/20.jpg`)} 
+        alt="Dynamic Image" 
+        class="coverArt"
         quality={50}
-        format={"avif"}
-        src="/images/smp/s4/17.png" /> -->
+        format="webp"
+        loading="lazy"
+        decoding="async"  />
 
 
 
