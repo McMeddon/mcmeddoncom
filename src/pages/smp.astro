@@ -1,15 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-/* import Herobanner from '../components/Herobanner.astro'; */
-import Card from '../components/Card.astro';
-import Herotext from '../components/Herotext.astro';
-/* import BBcode from '../components/bbcode.astro';*/
 import Instruction from '../components/Instruction.astro';
 import Herovideo from '../components/Herovideo.astro';
-import Pill from '../components/Pill.astro';
-/* import McPing from '../components/McPing.astro'; */
-/* import BGani from '../components/BG-animation.astro';
-import BGani2 from '../components/BG-animation2.astro';  */
 
 export interface Props {
     title: string;
@@ -18,6 +10,12 @@ export interface Props {
 const { title } = Astro.props;
 import { Image, Picture } from "astro:assets";
 import smpS4P1 from '../pages/maps/2023/smpS4/0.jpg'
+
+
+/* ------------------------- */
+
+
+
 ---
 
 <Layout title="McMeddons Community Server">	
@@ -26,11 +24,22 @@ import smpS4P1 from '../pages/maps/2023/smpS4/0.jpg'
     src="/videos/herovidmcs7.mp4">
 </Herovideo>
 
-<div class="introbannerdiv"><img class="introbanner" src="../src/images/minecraft_title.png" alt=""></div>
-		
+<div class="spacer40"></div>
+
+<div class="introbannerdiv"><div class="introbannerdiv">
+    <Image 
+    class="introbanner" 
+    src={import(`../images/mcssmp1.png`)} 
+    height={150}
+    
+    alt=""
+    loading="eager"
+    decoding="async"
+    /></div>
+    
+    <div class="spacer10"></div>
 <style>
     .introbannerdiv{
-        margin-top: 55vh;
         display: grid;
         justify-content: center;
         align-items: center;
@@ -40,7 +49,6 @@ import smpS4P1 from '../pages/maps/2023/smpS4/0.jpg'
         display: grid;
         justify-content: center;
         align-items: center;
-        max-width: 700px;
         
     }
 </style>
