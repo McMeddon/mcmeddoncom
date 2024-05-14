@@ -19,12 +19,11 @@ import { Image, Picture } from 'astro:assets'
                  >
             </a>
         </li>
-        <li> 
+<!--         <li> 
             <a target="" href="/maps/index.html">
                 <img class="menubar-img" src="/ui/dices.svg" alt="list icon"> All Maps
-                <!-- <img class="menubar-img" src="https://www.svgrepo.com/show/355797/dices.svg" alt="list icon"> All Maps -->
              </a>
-            </li>
+            </li> -->
         <li> 
             <a target="_blank" href="https://www.planetminecraft.com/blog/mcmeddons-roadmap/">
                  <img class="menubar-img" src="/ui/path.svg" alt="Roadmap Icon"> Roadmap
@@ -37,6 +36,7 @@ import { Image, Picture } from 'astro:assets'
                  <!-- <img class="menubar-img" src="https://www.svgrepo.com/show/507962/bulb-on.svg" alt="Roadmap Icon"> Roadmap -->
             </a>
         </li>
+        
         <li> 
             <a target="_blank" href="https://www.planetminecraft.com/blog/mcmeddons-map-update-history/">
                 <img class="menubar-img" src="/ui/history.svg" alt="history icon"> Update<br>History
@@ -58,7 +58,7 @@ import { Image, Picture } from 'astro:assets'
             </a>
         </li>
         <li> 
-            <a target="_blank" href="http://play.mcmeddon.com:8123/?worldname=Gelazkor&mapname=surface&zoom=1&x=2381&y=64&z=2500">
+            <a href="/smp-dynmap/">
                 <img class="menubar-img" src="/ui/map-location.svg"  alt="Dynmap Icon"> <center>SMP <br> Dynmap</center> 
                 <!-- <img class="menubar-img" src="https://www.svgrepo.com/show/500616/map-location.svg"  alt="Dynmap Icon"> <center>SMP <br> Dynmap</center>  -->
             </a>
@@ -98,6 +98,7 @@ import { Image, Picture } from 'astro:assets'
     z-index: 999;
     /* border: 1px solid red; */
     padding:1em;
+    
 }
 
 
@@ -142,8 +143,8 @@ import { Image, Picture } from 'astro:assets'
 }
 
 .menubar-img {
-    height:40px;
-    width:40px;
+    height:30px;
+    width:30px;
 }
 
 /* //add a transition to the hover  */
