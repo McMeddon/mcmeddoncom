@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Instruction from '../components/Instruction.astro';
 import Herovideo from '../components/Herovideo.astro';
+import Shelfitem from '../components/Shelfitem.astro';
+
 
 export interface Props {
     title: string;
@@ -9,36 +11,10 @@ export interface Props {
 
 const { title } = Astro.props;
 import { Image, Picture } from "astro:assets";
-import smpS4P1 from '../pages/maps/2023/smpS4/0.jpg'
-import Shelfitem from '../components/Shelfitem.astro';
+
 
 
 /* ------------------------- */
-const allPosts = await Astro.glob('../../src/pages/maps/**/**/*.md');
-
-// Shuffle posts
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
-shuffleArray(allPosts);
-
-// Transform the post data
-const postsWithImagesv1 = await Promise.all(allPosts.map(async (post) => {
-    const coverImage = post.frontmatter.coverRelative
-      ? (await import(`/src/pages/maps${post.frontmatter.coverRelative}`)).default 
-      : null; // Get the default export from the module
-
-    return {
-      url: post.url,
-      title: post.frontmatter?.title || null,
-      coverImage: coverImage || null, // Store the imported image
-      alt: post.frontmatter?.alt || "Post image",
-    };
-}));
-
 
 ---
 
@@ -48,33 +24,36 @@ const postsWithImagesv1 = await Promise.all(allPosts.map(async (post) => {
     src="/videos/herovidmcs7.mp4">
 </Herovideo>
 
-<div class="spacer40"></div>
+<div class="spacer60"></div>
 
 <div class="introbannerdiv"><div class="introbannerdiv">
     <Image 
     class="introbanner" 
     src={import(`../images/mcssmp1.png`)} 
-    height={150}
+    height={125}
     
     alt=""
     loading="eager"
     decoding="async"
-    /></div>
+    />
+</div>
     
-    <div class="spacer10"></div>
 <style>
-    .introbannerdiv{
-        display: grid;
-        justify-content: center;
-        align-items: center;
-    }
-    .introbanner{
-        
-        display: grid;
-        justify-content: center;
-        align-items: center;
-        
-    }
+.introbannerdiv{
+                z-index:9;
+				display: grid;
+				justify-content: center;
+				align-items: center;
+                
+			}
+			.introbanner{
+				
+				display: grid;
+                object-fit: contain;
+				justify-content: center;
+				align-items: center;
+				
+			}
 </style>
 
 
@@ -98,8 +77,7 @@ const postsWithImagesv1 = await Promise.all(allPosts.map(async (post) => {
     
     <content>
         <div class="">
-            <button class="btn btn-info" >  Joined since beginning: 370+</button>
-    
+            <button class="btn btn-info" >  Joined since beginning: 750+</button>
             <button class="btn btn-secondary" >  <a href="#">Season 1</a></button>
             <button class="btn btn-secondary" ><a href=#">Season 2</a></button>
             <button class="btn btn-secondary" ><a href="#">Season 3</a></button>
@@ -109,38 +87,83 @@ const postsWithImagesv1 = await Promise.all(allPosts.map(async (post) => {
         </div>
         <section class="split2">
             <section class="split2">
-            <Instruction
+            <Instruction 
                 h2="How to join via Java?"
                 p=""
                 p2=""
                 note=""
-                >
-                <br>
-                    IP:<code>play.mcmeddon.com</code> <br>Port:<code>25565</code>
+                >           IP:<code>play.mcmeddon.com</code> <br>Port:<code>25565</code><br><br>
                 
             </Instruction>
-            
+
             <Instruction
                 h2="How to join via Bedrock?"
                 p=""
                 p2=""
                 note=""
                 >
-                <br>
-                    IP:<code>play.mcmeddon.com</code> <br>Port:<code>25565</code>
+                
+                    IP:<code>play.mcmeddon.com</code> <br>Port:<code>25565</code><br><br>
             </Instruction>
+            <Instruction
+                h2="How to get whitelisted?"
+                p=""
+                p2=""
+                note=""
+                >
+                    - Join the discord server 
+                    <br>- Enter your name  in <code>#server-whitelist</code>
+                    <br>- or msg a staff member to get whitelisted. 
+             </Instruction>
         </section>
-        <Instruction
-            h2="How to get whitelisted?"
-            p=""
-            p2=""
-            note=""
-            >
-                - Join the discord server 
-                <br>- Enter your name  in <code>#server-whitelist</code>
-                <br>- or msg a staff member to get whitelisted. 
-        </Instruction>
+
     </section>
+
+<section>
+
+    <!-- dynmap examples
+
+-->
+
+    <!-- <iframe  src={frontmatter.dynmap || 'https://bluemap.mcmeddon.com/?worldname=Jesankor&mapname=surface&zoom=0&x=4662&y=64&z=3745'}  decoding="async" loading="lazy" ></iframe> -->
+    <dynmap id="dynmap">
+            <h3>Dynmap, Bluemap, Worldmap</h3>
+            <div id="dynmap-container" class="" style="margin:0;display:grid; border-radius:20px; align-content: center; border:1px solid; background-color:transparent; color:rgba(255, 255, 255, 0.219);">
+            <div class="spacer10" style="display:grid; border-radius:20px; justify-content: center;"> <center>Here can be a world map be loaded <br><br> (Note, if the correct map hasnt been created, <br>a fallback example map is loaded)</center></div>
+            <div class="spacer10" "> </div>
+            
+        </div>
+        <br>
+        <div style="display:flex; justify-content: center; ">
+            <button id="load-dynmap-button" class="btn button" style="scroll-behavior: smooth;"><a href="#dynmap">Open Dynmap</a> </button>
+            
+            <button id="" class="btn btn-outline button" style="scroll-behavior: smooth;"><a href="http://map.mcmeddon.com" target="_blank">Direct Link</a> </button>
+        </div>
+        
+                
+                <script is:inline define:vars={{}}>
+                    const container = document.getElementById('dynmap-container');
+                    const button = document.getElementById('load-dynmap-button');
+                    
+                    button.addEventListener('click', () => {
+                        const iframe = document.createElement('iframe');
+                        iframe.src = 'http://map.mcmeddon.com/';  
+                        iframe.decoding = 'async';
+                        iframe.loading = 'lazy';
+                        iframe.style='margin:0;';
+                        
+                        container.innerHTML = ''; 
+                        container.appendChild(iframe);
+                        button.style.display = 'block';
+                    });
+                    </script>
+            </dynmap>
+      
+      <div class="spacer10"></div>
+<!-- ------------------------------------------------->
+
+</section>
+
     <section class="split4">
         <script></script>
         <Shelfitem img ={import(`../pages/maps/2023/smpS4/0.jpg`)} ></Shelfitem>
@@ -360,13 +383,14 @@ const postsWithImagesv1 = await Promise.all(allPosts.map(async (post) => {
 
 
 hr{margin:5em;}
+
     .split2{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: inline-flex;
+        gap:2em;
+        height: fit-content;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        gap: 2em;
     }
 
     .split3{

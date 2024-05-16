@@ -8,6 +8,7 @@ import Shelfitem from '../components/Shelfitem.astro';
 import AccordionFeatured from '../components/AccordionFeatured.astro';
 
 
+
 /* ------------------------------------------- */
 /* IMAGE to be imported  */
 /* Posts images to be imported  */
@@ -49,7 +50,7 @@ const { title } = Astro.props;
 <Layout title="Homepage">	
 	<main>		
 		<Herovideo
-			src="/videos/herovid_compli1.mp4">
+			src="/videos/herovidmcs7.mp4">
 		</Herovideo>
 		<!---------------------------------
 		<Herotext
@@ -87,7 +88,7 @@ const { title } = Astro.props;
 			}
 		</style>
 
-		<h4>Featured</h4>
+		<h4>Featured Projects</h4>
 		<div class="shelf">
 			<Shelfitem img ={import(`../pages/maps/2024/yekalyx/x3.jpg`)}  url="./maps/2023/akonlyx"></Shelfitem>
 			<Shelfitem img ={import(`../pages/maps/2024/vurotorm/x1.jpg`)}  url="./maps/2023/akonlyx"></Shelfitem>
@@ -95,9 +96,55 @@ const { title } = Astro.props;
 			<Shelfitem img ={import(`../pages/maps/2024/xedrimos/a.jpg`)}  url="./maps/2023/akonlyx"></Shelfitem>
 			<Shelfitem img ={import(`../pages/maps/2023/uramaxos/1.jpg`)}  url="./maps/2023/akonlyx"></Shelfitem>
 		</div>
+		<h4>Featured Stories</h4>
+		<div class="shelf">
+			<Shelfitem img ={import(`../pages/maps/2024/yekalyx/x3.jpg`)}  url="#"> <h5>Server S6 Update</h5></Shelfitem>
+			<Shelfitem img ={import(`../pages/maps/2024/vurotorm/x1.jpg`)}  url="https://www.planetminecraft.com/forums/communities/mapping/mcmeddons-mapmaking-suggestion-sunday-680467/"><h5>Send your Ideas</h5></Shelfitem>
+			<Shelfitem img ={import(`../images/mcm-thoughts.jpg`) || null}  url="https://www.planetminecraft.com/member/mcmeddon/wall/"><h5>Latest Thoughts</h5></Shelfitem>
+		</div>
+			
+		<div class="announcements">
+			<h4 class="">This looks important ⬇</h4>
+			<a href="">
+				<Image src={import(`../pages/maps/2023/gelazkor/3.png`)} 
+				height={600, 1600}
+				alt=""
+				loading="eager"
+				decoding="async"
+				
+				style=""
+				class="shelfi"
+				/>
+				<style>
+					.shelfi, .preview-video {
+						min-width:100%; max-height:500px; object-fit:cover;
+						position: relative;
+						border-radius: 20px;
+						box-sizing: border-box;
+						border: 4px solid transparent;
+						padding: 5px;
+						aspect-ratio: 16 / 10 ;
+						object-fit:cover;
+						height: fit-content;
+						
+						
+						
+						}
+					.shelfi:hover {
+						border: 4px solid white;
+						transform: scale(1.01);
+						z-index: 99;
+						transition: cubic-bezier(0.075, 0.82, 0.165, 1) 2s;
+						box-shadow: rgba(0, 0, 0, 0.65) 0px 54px 55px, rgba(0, 0, 0, 0.62) 0px -12px 30px, rgba(0, 0, 0, 0.62) 0px 4px 6px, rgba(0, 0, 0, 0.67) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+						}
+				</style>
+
+				<button class="btn btn-link">Server Updates</button>
+			</a>
+		</div>
+
 		<br>
-		<h4>Featured Starter Worlds</h4>			
-	
+		<h4>All Featured Worlds</h4>			
 		<div class="shelf">
 			{postsWithImagesv1.map((post) => (
 			<div>
@@ -169,8 +216,6 @@ const { title } = Astro.props;
 		margin-bottom: 1em;
 	}
 }
-
-
 
 /* ---------------------------------------------- */
 

@@ -28,7 +28,7 @@ img, Image, Picture{
 	overflow: hidden;
 	width: fit-content;
 	object-fit: cover;
-	border-radius: 5px;
+	border-radius: 20px;
 	
 }
 /*--------------------------------------------*/
@@ -137,7 +137,7 @@ img {
 
 	.dynmap, iframe, .iframe {
 		position: relative;
-		border-radius: 25px;
+		border-radius: 20px;
 		z-index: 1;
 		min-width:100%; 
 		min-height:90vh; 

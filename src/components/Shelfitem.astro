@@ -7,6 +7,7 @@ export interface Props {
 }
 
 const {url} = Astro.props;
+const {src} = Astro.props;
 const {img} = Astro.props;
 const {video} = Astro.props;
 const {post} = Astro.props;
@@ -18,12 +19,15 @@ const {post} = Astro.props;
 			width={0}
 			height={380}
 			class="shelfi preview-image"
-			src={img} 
+			src={img || src} 
 			quality={50}
 			format={"avif"}
 			alt=""
 			loading="lazy" 
 			  />
+			  <div class="slotcontent">
+				<slot/>
+			  </div>
 			</a>
 		</div>
 
@@ -68,5 +72,13 @@ const {post} = Astro.props;
 .preview-container:hover .preview-video:hover {
   display: block;
 }
+
+
+.slotcontent{
+	color: white;
+	text-decoration: none !important;
+	
+}
+
 </style>
 

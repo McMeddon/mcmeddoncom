@@ -13,13 +13,13 @@ import { Image, Picture } from "astro:assets";
 <div class="wrapper">
     <a href={href} target="_blank">
         <!-- width="1920px" -->
-        <Picture class="heroimage" alt="banner image"
+        <Image class="heroimage" alt="banner image"
+            width={600}
             widths={[600, 1200, 1920]}
             aspectRatio={2/1}
             quality={50}
             format={"avif"}
             src={img} />
-        
         <div class="herobannertext">
             <h2 class="heroimagetitle ">{h2}</h2>
         </div>
