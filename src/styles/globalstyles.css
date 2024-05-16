@@ -54,6 +54,8 @@ p{
 /* font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
 /* for later*/
 
+.spacer1{	margin-top:1vh;}
+.spacer5{	margin-top:5vh;}
 .spacer10{	margin-top:10vh;}
 .spacer20{	margin-top:20vh;}
 .spacer30{	margin-top:30vh;}
@@ -133,7 +135,7 @@ img {
 
 	/* .------------ */
 
-	.dynmap, iframe {
+	.dynmap, iframe, .iframe {
 		position: relative;
 		border-radius: 25px;
 		z-index: 1;

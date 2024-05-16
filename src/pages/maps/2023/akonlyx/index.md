@@ -6,6 +6,8 @@ cover: ../pages/maps/2023/akonlyx/1.jpg
 coverRelative: /2023/akonlyx/4.jpg
 alt: "post picture"
 video:
+dynmap: 
+bluemap: https://mcmeddon.github.io/zekotorm/#20240514_zekotorm:838:0:768:656:2.35:0.67:0:0:perspective
 
 
 images:
