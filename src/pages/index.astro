@@ -16,7 +16,7 @@ import { Image, Picture } from "astro:assets";
 
 
 // Import posts
-const allPosts = await Astro.glob('../../src/pages/maps/**/**/*.md');
+const allPosts = await Astro.glob('../../src/pages/map/**/*.md');
 
 // Shuffle posts
 function shuffleArray(array) {
@@ -30,7 +30,8 @@ shuffleArray(allPosts);
 // Transform the post data
 const postsWithImagesv1 = await Promise.all(allPosts.map(async (post) => {
     const coverImage = post.frontmatter.coverRelative
-      ? (await import(`/src/pages/maps${post.frontmatter.coverRelative}`)).default 
+      ? (await import(`/src/pages/map${post.frontmatter.coverRelative}`)).default 
+      //? (await import(`../../../${post.frontmatter.coverRelative}`)).default 
       : null; // Get the default export from the module
 
     return {
@@ -41,6 +42,8 @@ const postsWithImagesv1 = await Promise.all(allPosts.map(async (post) => {
     };
 }));
 
+//console.log(post.frontmatter.coverRelative)
+
 export interface Props {
     title: string;
 }
@@ -50,7 +53,7 @@ const { title } = Astro.props;
 <Layout title="Homepage">	
 	<main>		
 		<Herovideo
-			src="/videos/herovidmcs7.mp4">
+			src="/videos/g7.mp4">
 		</Herovideo>
 		<!---------------------------------
 		<Herotext
@@ -90,23 +93,23 @@ const { title } = Astro.props;
 
 		<h4>Featured Projects</h4>
 		<div class="shelf">
-			<Shelfitem img ={import(`../pages/maps/2024/yekalyx/x3.jpg`)}  url="./maps/2023/akonlyx"></Shelfitem>
-			<Shelfitem img ={import(`../pages/maps/2024/vurotorm/x1.jpg`)}  url="./maps/2023/akonlyx"></Shelfitem>
-			<Shelfitem img ={import(`../pages/maps/2024/wokokor/x3.jpg`)}  url="./maps/2023/akonlyx"></Shelfitem>
-			<Shelfitem img ={import(`../pages/maps/2024/xedrimos/a.jpg`)}  url="./maps/2023/akonlyx"></Shelfitem>
-			<Shelfitem img ={import(`../pages/maps/2023/uramaxos/1.jpg`)}  url="./maps/2023/akonlyx"></Shelfitem>
+			<Shelfitem img ={import(`../pages/map/2024/yekalyx/x3.jpg`)}  url="./maps/akonlyx"></Shelfitem>
+			<Shelfitem img ={import(`../pages/map/2024/vurotorm/x1.jpg`)}  url="./maps/akonlyx"></Shelfitem>
+			<Shelfitem img ={import(`../pages/map/2024/wokokor/x3.jpg`)}  url="./maps/akonlyx"></Shelfitem>
+			<Shelfitem img ={import(`../pages/map/2024/xedrimos/a.jpg`)}  url="./maps/akonlyx"></Shelfitem>
+			<!-- <Shelfitem img ={import(`../pages/maps/2023/uramaxos/1.jpg`)}  url="./maps/2023/akonlyx"></Shelfitem> -->
 		</div>
 		<h4>Featured Stories</h4>
 		<div class="shelf">
-			<Shelfitem img ={import(`../pages/maps/2024/yekalyx/x3.jpg`)}  url="#"> <h5>Server S6 Update</h5></Shelfitem>
-			<Shelfitem img ={import(`../pages/maps/2024/vurotorm/x1.jpg`)}  url="https://www.planetminecraft.com/forums/communities/mapping/mcmeddons-mapmaking-suggestion-sunday-680467/"><h5>Send your Ideas</h5></Shelfitem>
+			<Shelfitem img ={import(`../pages/map/2024/yekalyx/x3.jpg`)}  url="#"> <h5>Server S6 Update</h5></Shelfitem>
+			<Shelfitem img ={import(`../pages/map/2024/vurotorm/x1.jpg`)}  url="https://www.planetminecraft.com/forums/communities/mapping/mcmeddons-mapmaking-suggestion-sunday-680467/"><h5>Send your Ideas</h5></Shelfitem>
 			<Shelfitem img ={import(`../images/mcm-thoughts.jpg`) || null}  url="https://www.planetminecraft.com/member/mcmeddon/wall/"><h5>Latest Thoughts</h5></Shelfitem>
 		</div>
 			
 		<div class="announcements">
 			<h4 class="">This looks important ⬇</h4>
 			<a href="">
-				<Image src={import(`../pages/maps/2023/gelazkor/3.png`)} 
+				<Image src={import(`../pages/map/2023/gelazkor/3.png`)} 
 				height={600, 1600}
 				alt=""
 				loading="eager"

@@ -1,0 +1,278 @@
+---
+import { Image, Picture } from 'astro:assets'
+import McPingPill from './McPingPill.astro'
+import McPing from './McPing.astro'
+
+---
+<div class="menuwrapper">
+    <menu class="menubar"> 
+        <ul>
+            <li> 
+                <a target="" href="/index.html">
+                    <Image 
+                    class="menubar-img" 
+                    src={import(`/public/favicon/favicon-32x32.png`)} 
+                    alt="logo" 
+                    height={32} 
+                    width={32}
+                    quality="low"
+                    decoding="async"
+                    loading="eager"
+                    >
+                </a>
+            </li>
+            <!--         <li> 
+                <a target="" href="/map/index.html">
+                <img class="menubar-img" src="/ui/dices.svg" alt="list icon"> All map
+                </a>
+                </li> -->
+                <li> 
+                    <a target="_blank" href="http://suggestionbox.mcmeddon.com">
+                        <!-- <img class="menubar-img" src="/ui/path.svg" alt="Roadmap Icon">  --> Suggestion Box
+                        <!-- <img class="menubar-img" src="https://www.svgrepo.com/show/355872/path.svg" alt="Roadmap Icon"> Roadmap -->
+                    </a>
+                </li>
+                <li> 
+                    <a target="_blank" href="https://www.planetminecraft.com/blog/mcmeddons-roadmap/">
+                        <!-- <img class="menubar-img" src="/ui/path.svg" alt="Roadmap Icon">  --> Roadmap
+                        <!-- <img class="menubar-img" src="https://www.svgrepo.com/show/355872/path.svg" alt="Roadmap Icon"> Roadmap -->
+                    </a>
+                </li>
+                
+                <li> 
+                    <a target="_blank" href="https://www.planetminecraft.com/blog/mcmeddons-map-update-history/">
+                        <!-- <img class="menubar-img" src="/ui/history.svg" alt="history icon">  -->Update History
+                <!-- <img class="menubar-img" src="https://www.svgrepo.com/show/509998/history.svg" alt="history icon"> Update<br>History -->
+            </a>
+        </li>
+        
+        
+        
+        <li> 
+            <a href="/world-dynmap/"> 
+                <!-- <img class="menubar-img" src="/ui/road-map-and-pin.svg" alt="Dynmap Icon"> -->
+                <!-- <img class="menubar-img" src="https://www.svgrepo.com/show/92704/road-map-and-pin.svg" alt="Dynmap Icon"> -->
+                <center>World Dynmap </center>
+            </a>
+        </li>
+        <!-- <li> 
+            <a href="/smp-dynmap/">
+                <img class="menubar-img" src="/ui/map-location.svg"  alt="Dynmap Icon"> <center>SMP <br> Dynmap</center> 
+                
+            </a>
+        </li> -->
+        <li>            
+            <!-- <button type="btn button-dark" style="font-size:7px; margin:0; align-items: center; justify-content: center; "class="btn btn-link" data-cc="c-settings"> 
+                <center> 🔘 🔘 🔘</center>
+            </button> -->
+            <a href="#" type="btn button-dark" "class="btn btn-link" data-cc="c-settings"> 
+                <center> Settings</center>
+            </a>
+        </li>
+        <li>
+            
+            
+            <button style="" class="btn btn-danger menulast-button"><a href="https://www.patreon.com/mcmeddon/" target="_blank">❤ Support McMeddon</a></button>
+            <button style="" class="btn btn-outline menulast-button"><a href="https://www.planetminecraft.com/" target="_blank"><McPing /></a> </button>  
+            
+            
+        </li>    
+    </ul>
+    
+</menu>
+</div>
+
+
+<style>
+
+
+.menulast-button{float: right;margin-left:10px;}
+
+
+
+
+/*-----------------------*/
+.menuwrapper{
+    position: fixed;
+    top:0 ;
+    width: 100%;      /* 
+    margin:auto;
+    justify-content: center;
+    align-items: center; */
+    z-index: 999;
+
+}
+.menubar{    
+    width: 90%;
+    max-width:1440px;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    
+    
+    
+    /* background-color: #2d2f31; */
+    /* background: rgba(0, 0, 0, 0.2); */
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .5);
+    backdrop-filter: blur(17.9px);
+    -webkit-backdrop-filter: blur(17.9px);
+    border: 1px solid #222;
+    
+    border-radius: 18px;
+    padding:5px;
+    
+
+    /* border: 1px solid red; */
+
+}
+
+
+.menubar-img{
+    width: 30px;
+    height: 30px;}
+/* removing random padding fix */
+.menubar ul {
+    min-width: fit-content;
+    display: flex;
+    margin:0;
+    padding
+    margin-left
+    
+    margin-right: auto;
+    
+    height:auto;
+    text-decoration: none;
+
+    
+}
+
+.menubar ul > li {
+    min-width: 30px;
+    margin:0;
+    list-style-type: none;
+    /* border: 1px solid blue; */
+    width: fit-content;
+    justify-content: space-evenly;
+    padding:2px;
+
+    margin:2px;
+    margin-right: 1%;
+
+   /*  border-radius: 12px;
+    border: 2px solid #444;
+    background: rgba(10, 10, 10, 0.7);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+    text-decoration: none;
+     
+     
+}
+.menubar ul > li > a {
+    min-width: fit-content;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr;
+    color:black;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+     align-items: center;
+     height: 100%;
+     font-size: 15px;
+    
+     /* border: 1px solid green; */
+     
+
+     
+}
+.menubar ul > li:not(:first-child) {
+    filter: invert(.9);
+}
+
+.menubar ul > li:last-child {
+    filter: invert(0);
+    margin-left: auto;
+    
+    
+}
+
+.menubar-img {
+    height:35px;
+    width:35px;
+    border-radius: 5px;
+
+
+/* //add a transition to the hover  */
+.menubar ul > li:hover:not(:first-child) {
+    filter: invert(46%) sepia(88%) saturate(782%) hue-rotate(16deg) brightness(90%) contrast(101%);
+    transition: 0.2s;
+}
+
+.menubar ul > li:hover:last-child {
+    filter: invert(0%) sepia(0%) saturate(100%) hue-rotate(0deg) brightness(100%) contrast(101%);
+    transition: 0.02s;
+}
+
+
+/*-----------------------*/
+@media (max-width: 768px) {
+    .menubar {
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        left: 0;
+        right: 0;
+        
+        height: auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        background: rgba(51, 51, 51, 0.8); /* Slightly more opaque for better visibility */
+        border-top: 1px solid #222;
+        padding: 0.5em 0; /* Reduce padding for a more compact layout */
+    }
+
+    .menubar ul {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        justify-content: space-around; /* Spread out the items evenly */
+    }
+
+    .menubar ul > li {
+        margin: 0;
+        list-style-type: none;
+        width: auto; /* Adjust width to fit horizontal layout */
+        padding: 0.5em; /* Increase padding for touch targets */
+    }
+
+    .menubar ul > li > a {
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: black; /* Change text color for better contrast on darker background */
+    }
+
+    .menubar-img {
+        height: 30px; /* Reduce icon size for better fit on mobile */
+        width: 30px;
+    }
+
+    /* Hover effects */
+    .menubar ul > li:hover:not(:first-child) {
+        filter: none; /* Reset filter on hover for mobile */
+        transition: 0.2s;
+    }
+}
+/*-----------------------*/
+
+
+
+</style>

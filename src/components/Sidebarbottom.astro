@@ -2,7 +2,7 @@
 import { Image, Picture } from 'astro:assets'
 ---
 
-
+<div class="menuwrapper">
 <menu class="menubar"> 
     <ul>
         <li> 
@@ -20,26 +20,26 @@ import { Image, Picture } from 'astro:assets'
             </a>
         </li>
 <!--         <li> 
-            <a target="" href="/maps/index.html">
-                <img class="menubar-img" src="/ui/dices.svg" alt="list icon"> All Maps
+            <a target="" href="/map/index.html">
+                <img class="menubar-img" src="/ui/dices.svg" alt="list icon"> All map
              </a>
             </li> -->
         <li> 
             <a target="_blank" href="https://www.planetminecraft.com/blog/mcmeddons-roadmap/">
-                 <img class="menubar-img" src="/ui/path.svg" alt="Roadmap Icon"> Roadmap
-                 <!-- <img class="menubar-img" src="https://www.svgrepo.com/show/355872/path.svg" alt="Roadmap Icon"> Roadmap -->
+                <img class="menubar-img" src="/ui/path.svg" alt="Roadmap Icon"> Roadmap
+                <!-- <img class="menubar-img" src="https://www.svgrepo.com/show/355872/path.svg" alt="Roadmap Icon"> Roadmap -->
             </a>
         </li>
         <li> 
             <a href="/request">
-                 <img class="menubar-img" src="/ui/bulb.svg" alt="Roadmap Icon"> Feature <br> Request
+                 <img class="menubar-img" src="/ui/bulb.svg" alt="Roadmap Icon"> Feature   Request
                  <!-- <img class="menubar-img" src="https://www.svgrepo.com/show/507962/bulb-on.svg" alt="Roadmap Icon"> Roadmap -->
             </a>
         </li>
         
         <li> 
             <a target="_blank" href="https://www.planetminecraft.com/blog/mcmeddons-map-update-history/">
-                <img class="menubar-img" src="/ui/history.svg" alt="history icon"> Update<br>History
+                <img class="menubar-img" src="/ui/history.svg" alt="history icon"> Update History
                 <!-- <img class="menubar-img" src="https://www.svgrepo.com/show/509998/history.svg" alt="history icon"> Update<br>History -->
             </a>
         </li>
@@ -51,10 +51,10 @@ import { Image, Picture } from 'astro:assets'
         </li>
 
         <li> 
-            <a href="/world-dynmaps/"> 
+            <a href="/world-dynmap/"> 
                 <img class="menubar-img" src="/ui/road-map-and-pin.svg" alt="Dynmap Icon">
                 <!-- <img class="menubar-img" src="https://www.svgrepo.com/show/92704/road-map-and-pin.svg" alt="Dynmap Icon"> -->
-                <center>World <br> Dynmaps </center>
+                <center>World Dynmap </center>
             </a>
         </li>
         <!-- <li> 
@@ -70,7 +70,7 @@ import { Image, Picture } from 'astro:assets'
         </li>
     </ul>
 </menu>
-
+</div>
 <style>
 
 
@@ -80,25 +80,36 @@ import { Image, Picture } from 'astro:assets'
 
 
 /*-----------------------*/
-.menubar{    
-    margin:0;
-    padding:0;
-    max-width: var(--menubar-max-width);
-    /* max-width: 100%; */
+.menuwrapper{
     position: fixed;
-    top: 0;
-    left: 0;
+    bottom:0 ;
+    width: 100%;
+    z-index: 999;
+}
+.menubar{    
+    
+    max-width:fit-content;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    
+    
+    
     /* background-color: #2d2f31; */
-
-    background: rgba(51, 51, 51, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    /* background: rgba(0, 0, 0, 0.2); */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(7.9px);
     -webkit-backdrop-filter: blur(7.9px);
-    border-right: 1px solid #222;
-    height:100%;
-    z-index: 999;
+    border: 1px solid #222;
+    
+    border-radius: 18px;
+    padding:10px;
+    
+
     /* border: 1px solid red; */
-    padding:1em;
+    
     
 }
 
@@ -108,44 +119,63 @@ import { Image, Picture } from 'astro:assets'
     height: auto;}
 /* removing random padding fix */
 .menubar ul {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
+    min-width: fit-content;
+    display: flex;
+        margin:0;
+        padding:0;
     
-    margin:0;
-    padding: 0;
+        text-decoration: none;
 }
 
 .menubar ul > li {
+    min-width: 60px;
     margin:0;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
     list-style-type: none;
-
     /* border: 1px solid blue; */
-    width: 100%;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    
+    width: fit-content;
+
+    padding:5px;
+    margin:2px;
+
+    border-radius: 12px;
+    border: 2px solid #444;
+    background: rgba(10, 10, 10, 0.7);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+     
+     
 }
 .menubar ul > li > a {
+    min-width: fit-content;
+
+    
     grid-template-columns: auto;
     grid-template-rows: 1fr;
-    width: 100%;
-    color:black;
+    color:#999;
+    text-decoration: none;
     text-decoration:  none;   
     
     display: inline-flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    width: 100%;
+     align-items: center;
+     height: 100%;
+     font-size: 10px;
     
      /* border: 1px solid green; */
+     
+
+     
 }
 .menubar ul > li:not(:first-child) {
-    filter: invert(.9);
+    /* filter: invert(.9); */
 }
 
 .menubar-img {
-    height:30px;
-    width:30px;
+    height:25px;
+    width:25px;
 }
 
 /* //add a transition to the hover  */
