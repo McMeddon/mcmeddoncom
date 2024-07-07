@@ -3,7 +3,7 @@ layout: "../../../layouts/Mapz.astro"
 title: Jarmusto
 date: 2024-01-01 00:00 
 #coverart for project page
-cover: ../pages/map/jarmusto/world.jpg
+cover: /jarmusto/world.jpg
 # coverart for frontpage
 coverRelative: /jarmusto/d.jpg
 

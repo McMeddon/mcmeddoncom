@@ -3,7 +3,7 @@ layout: "../../../layouts/Mapz.astro"
 title: Edoximos
 date: 2024-01-01 00:00 
 #coverart for project page
-cover: ../pages/map/edoximos/c.jpg
+cover: /edoximos/c.jpg
 # coverart for frontpage
 coverRelative: /edoximos/c.jpg
 

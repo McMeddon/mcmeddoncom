@@ -2,47 +2,37 @@
 layout: "../../../layouts/Mapz.astro"
 title: Akonlyx
 date: 2024-01-01 00:00 
-
 #coverart for project page
-cover: ../pages/map/akonlyx/e.jpg
+cover: /akonlyx/aa.jpg
 # coverart for frontpage
-coverRelative: /akonlyx/c.jpg
+coverRelative: /jarmusto/d.jpg
 
-#cover: ./1.jpg
-#coverRelative: ./4.jpg
-#cover: ../pages/map/2023/akonlyx/1.jpg
-#coverRelative: /2023/akonlyx/4.jpg
 alt: "post picture"
 video:
 dynmap: 
-bluemap: https://mcmeddon.github.io/zekotorm/
+bluemap: 
 
 
 images:
-  - '../../src/pages/map/akonlyx/1.png'
-  - '../../src/pages/map/akonlyx/e.jpg'
-  - '../../src/pages/map/akonlyx/f.jpg'
-  - '../../src/pages/map/akonlyx/2.png'
+  - '../../src/pages/map/akonlyx/1.jpg'
+  - '../../src/pages/map/akonlyx/2.jpg'
   - '../../src/pages/map/akonlyx/3.jpg'
-  - '../../src/pages/map/akonlyx/i.jpg'
-
-
+  - '../../src/pages/map/akonlyx/4.jpg'
+  - '../../src/pages/map/akonlyx/5.jpg'
+  - '../../src/pages/map/akonlyx/6.jpg'
+  - '../../src/pages/map/akonlyx/7.jpg'
+  
 description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
 draft: false
 category: Map 2023
 downloadlink: #
 pmcpage: https://www.planetminecraft.com/project/akonlyx/
-patreonpage: https://www.patreon.com/posts/akonlyx-4k-77880423
-
+patreonpage: https://www.patreon.com/mcmeddon/
 ---
 
-## This is Akonlyx,
+Welcome to akonlyx,
+a amazing 36km² custom Minecraft map created by McMeddon. This world is the expandsion of Ikalyx. Surrounding it with a huge crest island and a gigantic mountain half ring. Featuring dozens of islands, badlands, volcanos and more.
 
-a big 16km² Adventure Skyblock World. A diverse Minecraft Landscape for survival, creative, coop, and server adventures made by McMeddon.
+Embark on thrilling adventures by plundering forests and balloons, battling through deserts, or constructing your dream home on cliffs or mountains. Discover custom thriving diverse island to explore.
 
-Adventure, explore, survive or create, at the most beautiful places in Minecraft and explore all the unique places and structures around the world.
-
-Loot ships, balloons, and conquer dungeons. Build a house on Volcanos, or within huge mountains or survive along the rivers and the woods. Find custom caves, mineshafts, coral reefs, advanced biomes, supporter villages, and more.
-
----------------------
-
+-----

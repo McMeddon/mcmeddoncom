@@ -30,7 +30,7 @@ shuffleArray(allPosts);
 // Transform the post data
 const postsWithImagesv1 = await Promise.all(allPosts.map(async (post) => {
     const coverImage = post.frontmatter.coverRelative
-      ? (await import(`/src/pages/map${post.frontmatter.coverRelative}`)).default 
+      ? (await import(`/src/pages/map${post.frontmatter.cover}`)).default 
       //? (await import(`../../../${post.frontmatter.coverRelative}`)).default 
       : null; // Get the default export from the module
 
@@ -96,6 +96,38 @@ const { title } = Astro.props;
 <div class="shelf">
 	{postsWithImagesv1.map((post) => (
 	<div>
+
+{/* a
+
+(await import(`/src/pages/map${post.frontmatter.coverRelative}`)).default 
+(await import(`/src/pages/map${post.frontmatter.coverImage}`)).default 
+		<a key={post.url} href={post.url}>
+		{post.coverImage ? ( 
+		  <Shelfitem
+			img={import(`../pages/map${post.frontmatter.coverImage}`)} // Resolve the import promise
+			url={post.url}
+			alt=""
+			loading="lazy"
+			width="0"
+			height="250"
+			aspectRatio="16/9"
+			formats={["avif"]}
+		  />
+		  <p>{post.title}</p> 
+		) : (
+		  <p>oop Image not found</p> 
+		  <img src="./fallbackimage"/>
+		)}
+	  </a>
+	</div>
+	  
+	))}
+  </div>
+
+*/}
+
+			{/* img={post.coverImage} // Resolve the import promise */}
+
 		<a key={post.url} href={post.url}>
 		{post.coverImage ? ( 
 		  <Shelfitem
