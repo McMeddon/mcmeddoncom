@@ -13,10 +13,15 @@ import AccordionFeatured from '../components/AccordionFeatured.astro';
 /* IMAGE to be imported  */
 /* Posts images to be imported  */
 import { Image, Picture } from "astro:assets";
+import { getCollection } from 'astro:content';
 
 
 // Import posts
 const allPosts = await Astro.glob('../../src/pages/map/**/*.md');
+console.log("allPosts");
+
+//const  artworkcollection = await getCollection("artworks");
+//const artwork = await getCollection("blogCollection");
 
 
 // Shuffle posts
@@ -29,17 +34,23 @@ function shuffleArray(array) {
 shuffleArray(allPosts);
 
 // Transform the post data
+const postsWithImagesv1 = await Promise.all(allPosts.map(async (post) => {
+    const coverImage = post.frontmatter.coverRelative
+	  ? new URL(`../../../../src/pages/map/${post.frontmatter.cover}`, import.meta.url).pathname
+      //? (await import(`./src/pages/map/${post.frontmatter.cover}.jpg`)).default 
+      //? (await import(`../../../${post.frontmatter.coverRelative}`)).default 
+      : null; // Get the default export from the module
 
-const postsWithImagesv2 = await Promise.all(allPosts.map(async (post) => {
-    const coverImage = post.frontmatter.cover; // Assuming you have an attribute 'cover' directly in the markdown
-	
     return {
-        url: post.url,
-        title: post.frontmatter?.title || null,
-        coverImage,
-        alt: post.frontmatter?.alt || "Post image",
+      url: post.url,
+      title: post.frontmatter?.title || null,
+      coverImage: coverImage || null, // Store the imported image
+      alt: post.frontmatter?.alt || "Post image",
     };
 }));
+
+
+
 
 //console.log(post.frontmatter.coverRelative)
 
@@ -49,17 +60,22 @@ export interface Props {
 const { title } = Astro.props;
 ---
 
+
 <Layout title="Homepage">	
 	<main>		
 		<Herovideo
-			src="/videos/g7.mp4">
-		</Herovideo>
-		<!---------------------------------
-		<Herotext
-		h1="Advanced Survival Friendly Vanilla Minecraft Landscapes"
-		p="">
-		</Herotext>-->
-		<div class="spacer60"></div>
+		src="/videos/g7.mp4">
+	</Herovideo>
+	<!---------------------------------
+	<Herotext
+	h1="Advanced Survival Friendly Vanilla Minecraft Landscapes"
+	p="">
+	</Herotext>-->
+	<div class="spacer60"></div>
+	
+	
+
+
 		<div class="introbannerdiv">
 			<Image 
 			class="introbanner" 
@@ -93,14 +109,52 @@ const { title } = Astro.props;
 <!-- all featured worlds------------------------------------------------------- -->		
 <h4>All Featured Worlds</h4>			
 <div class="shelf">
-	<!-- img={post.coverImage} // Resolve the import promise  -->
-	{postsWithImagesv2.map((post) => (
+	
+<!-- 	
+		{allPosts.map((i)=>{
+
+		const pici = "./src/pages/map/" + i.frontmatter.cover;
+		return 		<a href={i.url}>{i.frontmatter.title}
+				<img src={pici} />
+				
+		</a>
+		}
+		)}
+		TEST
+		 -->
+	
+	
+
+ 	{allPosts.map((i)=>{
+
+		const pici = "../../../../../../../src/pages/map/" + i.frontmatter.cover;
+		return 		<div><a key={i.url} href={i.url}>
+				<Shelfitem
+				img={import(`${pici}`)}  // Resolve the import promise
+				url={i.url}
+				alt=""
+				loading="lazy"
+				width="250"
+				height="250"
+				aspectRatio="16/9"
+				formats={["avif"]}
+				inferSize={true}
+			/>
+		   <p>{i.frontmatter.title}</p>
+		</a>
+		</div>
+		}
+		)}
+ 
+	<hr>
+	<!-- {allPosts.map((post) => post.frontmatter.cover + '____' )} 
+	
+	{allPosts.map((post) => (
 	<div>
 		<a key={post.url} href={post.url}>
-			{post.coverImage ? ( 
+			{post.cover ? ( 
 			<Shelfitem
-				img={import(`../../../../../../../src/pages/map/${post.coverImage}`)} // Resolve the import promise
-				
+				img={post.cover} // Resolve the import promise
 				url={post.url}
 				alt=""
 				loading="lazy"
@@ -120,7 +174,7 @@ const { title } = Astro.props;
 	</div>
 		//<img src="./fallbackimage" width="250" height="250" alt="Fallbacks"/>
 	  
-	))}
+	))}-->
   </div>
 <!-- end -->
 <!--------------------- <h4>Featured Projects</h4> -->
@@ -241,8 +295,6 @@ const { title } = Astro.props;
 	gap:0;
 	justify-content: center;
 	align-items: center;
-	
-	
 }
 
 #nextButton {
