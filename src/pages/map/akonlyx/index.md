@@ -2,8 +2,12 @@
 layout: "../../../layouts/Mapz.astro"
 title: Akonlyx
 date: 2024-01-01 00:00 
-cover: ../pages/map/2023/gelazkor/1.jpg
-coverRelative: /2023/gelazkor/1b.jpg
+
+#coverart for project page
+cover: ../pages/map/akonlyx/e.jpg
+# coverart for frontpage
+coverRelative: /akonlyx/c.jpg
+
 #cover: ./1.jpg
 #coverRelative: ./4.jpg
 #cover: ../pages/map/2023/akonlyx/1.jpg
@@ -11,7 +15,7 @@ coverRelative: /2023/gelazkor/1b.jpg
 alt: "post picture"
 video:
 dynmap: 
-bluemap: https://mcmeddon.github.io/zekotorm/#20240514_zekotorm:838:0:768:656:2.35:0.67:0:0:perspective
+bluemap: https://mcmeddon.github.io/zekotorm/
 
 
 images:
@@ -20,20 +24,8 @@ images:
   - '../../src/pages/map/akonlyx/f.jpg'
   - '../../src/pages/map/akonlyx/2.png'
   - '../../src/pages/map/akonlyx/3.jpg'
-  #- '../../src/pages/map/akonlyx/5.jpg'
-  #- '../../src/pages/map/akonlyx/6.jpg'
-  #- '../../src/pages/map/akonlyx/7.jpg'
-  #- '../../src/pages/map/akonlyx/8.jpg'
-  #- '../../src/pages/map/akonlyx/9.jpg'
-  #- '../../src/pages/map/akonlyx/10.jpg'
-  
-  - '../../src/pages/map/akonlyx/12.jpg'
-  #- '../../src/pages/map/akonlyx/a.jpg'
-  #- '../../src/pages/map/akonlyx/aa.jpg'
-  #- '../../src/pages/map/akonlyx/b.jpg'
-  #- '../../src/pages/map/akonlyx/c.jpg'
-  #- '../../src/pages/map/akonlyx/d.jpg'
-  #- '../../src/pages/map/akonlyx/g.jpg'
+  - '../../src/pages/map/akonlyx/i.jpg'
+
 
 description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
 draft: false

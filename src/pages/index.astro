@@ -30,7 +30,7 @@ shuffleArray(allPosts);
 // Transform the post data
 const postsWithImagesv1 = await Promise.all(allPosts.map(async (post) => {
     const coverImage = post.frontmatter.coverRelative
-      ? (await import(`./src/pages/map${post.frontmatter.coverRelative}`)).default 
+      ? (await import(`/src/pages/map${post.frontmatter.coverRelative}`)).default 
       //? (await import(`../../../${post.frontmatter.coverRelative}`)).default 
       : null; // Get the default export from the module
 
@@ -228,7 +228,7 @@ const { title } = Astro.props;
 /* ---------------------------------------------- */
 
 .shelf{
-	max-width: calc(100%-10em)80%;
+	max-width: calc(100% - 10em) 80%;
 	display: grid;
   	grid-template-rows: 1fr;
   	/* grid-template-columns: repeat(5, 1fr); */
