@@ -2,23 +2,25 @@
 import { Image, Picture } from 'astro:assets'
 import McPingPill from './McPingPill.astro'
 import McPing from './McPing.astro'
-
+let tilespattern1 = '../public/ui/minecraft/Deepslate_29_JE2.png'
 ---
 <div class="menuwrapper">
     <menu class="menubar"> 
         <ul>
             <li> 
+                <!-- src={import(`/public/favicon/favicon-32x32.png`)}  -->
                 <a target="" href="/index.html">
-                    <Image 
+                    <img src="/public/ui/McMeddon-waving-mini.gif">
+                    <!-- <Image 
                     class="menubar-img" 
-                    src={import(`/public/favicon/favicon-32x32.png`)} 
+                    src={import(`/public/ui/McMeddon-waving-mini.gif`)} 
                     alt="logo" 
                     height={32} 
                     width={32}
                     quality="low"
                     decoding="async"
                     loading="eager"
-                    >
+                    > -->
                 </a>
             </li>
             <!--         <li> 
@@ -72,7 +74,7 @@ import McPing from './McPing.astro'
         <li>
             
             
-            <button style="" class="btn btn-danger menulast-button"><a href="https://www.patreon.com/mcmeddon/" target="_blank">❤ Support McMeddon</a></button>
+            <button style="" class="btn btn-pmc menulast-button"><a href="https://www.patreon.com/mcmeddon/" target="_blank">❤ Support McMeddon</a></button>
             <button style="" class="btn btn-outline menulast-button"><a href="https://www.planetminecraft.com/" target="_blank"><McPing /></a> </button>  
             
             
@@ -103,6 +105,11 @@ import McPing from './McPing.astro'
 
 }
 .menubar{    
+    /* TDO: //URL causing error */
+    /* background-image: url(""); */
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
     width: 90%;
     max-width:1440px;
     margin: auto;
