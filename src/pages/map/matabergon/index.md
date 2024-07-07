@@ -3,7 +3,7 @@ layout: "../../../layouts/Mapz.astro"
 title: Matabergon
 date: 2024-01-01 00:00 
 cover: matabergon/o.jpg
-coverRelative: /matabergon/Matabergonthumb1.jpg
+
 #cover: ./1.jpg
 #coverRelative: ./4.jpg
 #cover: ../pages/map/2023/akonlyx/1.jpg

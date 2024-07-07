@@ -5,7 +5,7 @@ date: 2024-01-01 00:00
 #coverart for project page
 cover: edoximos/c.jpg
 # coverart for frontpage
-coverRelative: /edoximos/c.jpg
+
 
 alt: "post picture"
 video:
