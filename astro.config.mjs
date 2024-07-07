@@ -16,7 +16,7 @@ import { defineConfig, squooshImageService } from 'astro/config';
 
 export default defineConfig({
   site: 'https://mcmeddon.com',
-  outDir: './build', 
+  /* outDir: './build',  */
   image: {
     service: squooshImageService(),
   },
